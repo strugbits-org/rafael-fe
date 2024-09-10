@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+html {
+  background-color: #1f1f1f;
+}
+.ant-btn:hover {
+  background-color: #2f88ff !important;
+}
