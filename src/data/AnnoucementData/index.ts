@@ -1,4 +1,4 @@
-import { annoucements } from "../../@types";
+import { annoucements, bestEmployee } from "../../@types";
 
 const announcementsData: annoucements[] = [
   {
@@ -17,4 +17,22 @@ const announcementsData: annoucements[] = [
   },
 ];
 
-export { announcementsData };
+const bestEmployeeData: bestEmployee[] = [
+  {
+    name: "Sophia Carter",
+    image:
+      "https://file.xunruicms.com/admin_html/assets/pages/media/profile/profile_user.jpg",
+  },
+  {
+    name: "JOHN DAVID",
+    image:
+      "https://file.xunruicms.com/admin_html/assets/pages/media/profile/profile_user.jpg",
+  },
+  {
+    name: "JOHN DAVID",
+    image:
+      "https://file.xunruicms.com/admin_html/assets/pages/media/profile/profile_user.jpg",
+  },
+];
+
+export { announcementsData, bestEmployeeData };

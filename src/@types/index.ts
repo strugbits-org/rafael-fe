@@ -5,4 +5,9 @@ interface annoucements {
   userName: string;
 }
 
-export type { annoucements };
+interface bestEmployee {
+  name: string;
+  image: string;
+}
+
+export type { annoucements, bestEmployee };

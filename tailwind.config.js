@@ -8,6 +8,9 @@ export default {
         "secondary-100": "#292929",
         "primary-100": "#2f88ff",
       },
+      backgroundImage: {
+        bgImageCelebration: "url('/src/assets/images/celebrationBGImage.png')",
+      },
     },
   },
   plugins: [],

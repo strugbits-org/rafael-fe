@@ -1,9 +1,10 @@
-import { Flex } from "antd";
+import { Col, Flex, Row } from "antd";
 import Container from "../components/ui/Container";
 import { Box } from "../components/ui/box";
 import AnnouncementCard from "../components/AnnouncementCard";
-import { announcementsData } from "../data/AnnoucementData";
+import { announcementsData, bestEmployeeData } from "../data/AnnoucementData";
 import { ReactNode } from "react";
+import BestEmployeeCard from "../components/BestEmployeeCard";
 
 type InnerContainer = {
   children: ReactNode;
@@ -36,8 +37,8 @@ const Anouncement = () => {
           {/* ================ANNOUNCEMENTs CARD================= */}
 
           <Flex vertical gap={20}>
-            {announcementsData.map((announcement) => (
-              <AnnouncementCard key={announcement.title} {...announcement} />
+            {announcementsData.map((announcement, index) => (
+              <AnnouncementCard key={index} {...announcement} />
             ))}
           </Flex>
         </InnerContainer>
@@ -45,13 +46,31 @@ const Anouncement = () => {
         {/* ===============CELEBRATIONS Section================= */}
 
         <InnerContainer title="Celebrations">
-          {/* ================CELEBRATIONS CARD================= */}
-
-          <Flex vertical gap={20}>
-            {announcementsData.map((announcement) => (
-              <AnnouncementCard key={announcement.title} {...announcement} />
+          <Row gutter={[16, 24]} align={"middle"} justify={"start"}>
+            {/* ================BEST EMPLOYEE CARD================= */}
+            {bestEmployeeData.map((employee, index) => (
+              <Col
+                key={index}
+                xs={{
+                  span: 24,
+                }}
+                sm={{
+                  span: 24,
+                }}
+                md={{
+                  span: 24,
+                }}
+                lg={{
+                  span: 12,
+                }}
+                xxl={{
+                  span: 8,
+                }}
+              >
+                <BestEmployeeCard {...employee} />
+              </Col>
             ))}
-          </Flex>
+          </Row>
         </InnerContainer>
       </Flex>
     </Container>
