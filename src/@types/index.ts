@@ -1,3 +1,4 @@
+// UPDATES PAGE TYPES
 interface annoucements {
   title: string;
   description: string;
@@ -10,4 +11,12 @@ interface bestEmployee {
   image: string;
 }
 
-export type { annoucements, bestEmployee };
+// REMINDERS PAGE TYPES
+
+interface reminder {
+  title: string;
+  description: string;
+  image: string;
+}
+
+export type { annoucements, bestEmployee, reminder };
