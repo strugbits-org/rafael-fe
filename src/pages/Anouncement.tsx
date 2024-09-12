@@ -34,9 +34,8 @@ const Anouncement = () => {
       <Flex gap={20} vertical>
         {/* ================ANNOUNCEMENTs Section================= */}
         <InnerContainer title="Announcements">
-          {/* ================ANNOUNCEMENTs CARD================= */}
-
           <Flex vertical gap={20}>
+            {/* ================ANNOUNCEMENTs CARD================= */}
             {announcementsData.map((announcement, index) => (
               <AnnouncementCard key={index} {...announcement} />
             ))}

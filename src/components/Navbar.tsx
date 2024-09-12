@@ -1,5 +1,5 @@
 import { Button, Flex, Switch } from "antd";
-import React from "react";
+
 import { Box } from "./ui/box";
 import { FaShareSquare } from "react-icons/fa";
 const Navbar = () => {

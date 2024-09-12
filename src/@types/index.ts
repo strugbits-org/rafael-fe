@@ -19,4 +19,26 @@ interface reminder {
   image: string;
 }
 
-export type { annoucements, bestEmployee, reminder };
+//Meeting Agenda page types
+
+type AgendaTableHeader = string[];
+interface Speaker {
+  name: string;
+  avatarUrl: string;
+}
+
+interface ScheduleItem {
+  time: string;
+  speaker: Speaker;
+  topic: string;
+  duration: number;
+  badge?: string[];
+}
+
+export type {
+  annoucements,
+  bestEmployee,
+  reminder,
+  ScheduleItem,
+  AgendaTableHeader,
+};
