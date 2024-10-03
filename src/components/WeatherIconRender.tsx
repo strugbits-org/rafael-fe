@@ -1,4 +1,3 @@
-import React from "react";
 import { WiDaySunny, WiCloudy, WiRain, WiCloudyWindy } from "react-icons/wi";
 import { WeatherCondition } from "../@types";
 import { IoMdSnow } from "react-icons/io";

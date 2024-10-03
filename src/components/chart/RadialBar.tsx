@@ -64,8 +64,8 @@ const RadialBar = ({ viewMode }: { viewMode: viewMode }) => {
 
   // ApexChart options
   const options = {
-    series: chartData.series.map((e) =>
-      ((e / totalParticipants) * 100).toFixed(2)
+    series: chartData.series.map(
+      (e) => Number(((e / totalParticipants) * 100).toFixed(2)) // Ensure series is numeric
     ),
     chart: {
       height: 350,
@@ -86,7 +86,7 @@ const RadialBar = ({ viewMode }: { viewMode: viewMode }) => {
             label: "Total",
             color: snap.darkMode ? "white" : "black",
             formatter: function () {
-              return chartData.series.reduce((a, b) => a + b, 0); // Total count
+              return chartData.series.reduce((a, b) => a + b, 0).toString(); // Convert number to string
             },
           },
         },

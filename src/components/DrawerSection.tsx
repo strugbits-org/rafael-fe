@@ -1,4 +1,3 @@
-import React from "react";
 import { Drawer, Flex, Switch } from "antd";
 import { Link, useLocation } from "react-router-dom";
 import { IoDocumentTextOutline } from "react-icons/io5";

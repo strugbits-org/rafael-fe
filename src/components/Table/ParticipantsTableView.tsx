@@ -152,7 +152,7 @@ const ParticipantsTableView = ({
 
                 {/* Details */}
                 <td className="px-6 py-5 whitespace-nowrap">
-                  <ParticipantsModal data={row} />
+                  <ParticipantsModal data={row} fullWidthbtn={false} />
                 </td>
               </tr>
             ))}
