@@ -15,12 +15,12 @@ const InnerContainer: React.FC<InnerContainer> = (
   { children, title } //inner container sections Announcements & celebrations
 ) => (
   <Flex
-    className="xl:p-7 p-5 md:p-6 bg-[#1F1F1F] rounded-[12px]"
+    className="xl:p-7 p-5 md:p-6 dark:bg-[#1f1f1f]  bg-slate-200  rounded-[12px]"
     vertical
     gap={16}
   >
     <Box>
-      <h1 className=" text-white text-[16px] md:text-[18px] lg:text-[20px] xl:text-[24px] font-[600]">
+      <h1 className=" dark:text-white font-segoe text-black text-[16px] md:text-[18px] lg:text-[20px] xl:text-[24px] font-[600]">
         {title}
       </h1>
     </Box>

@@ -7,7 +7,7 @@ type ContainerProps = {
 
 const Container: React.FC<ContainerProps> = ({ children }) => {
   return (
-    <Box className=" xl:p-7 p-5 md:p-6 bg-secondary-100 rounded-[16px]  ">
+    <Box className=" xl:p-7 p-5 md:p-6  dark:bg-[#292929]  bg-gray-300 rounded-[16px] max-w-full ">
       {children}
     </Box>
   );

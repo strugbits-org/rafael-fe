@@ -1,12 +1,13 @@
 import { Flex } from "antd";
 import { Box } from "./ui/box";
-import semperis from "../assets/images/semperis.png";
+// import semperis from "../assets/images/semperis.png";
 import { bestEmployee } from "../@types";
+import Paragraph from "./common/Paragraph";
 
 const BestEmployeeCard = ({ image, name }: bestEmployee) => {
   return (
     <Flex
-      className="py-6 px-16 bg-bgImageCelebration bg-cover bg-no-repeat bg-center  mx-auto"
+      className="py-6 font-segoe px-16 bg-bgImageCelebration bg-cover bg-no-repeat bg-center  mx-auto"
       align="center"
       vertical
       gap={20}
@@ -34,7 +35,7 @@ const BestEmployeeCard = ({ image, name }: bestEmployee) => {
       </Box>
 
       <Flex vertical gap={16} align="center">
-        <h5 className=" text-white text-[18px] md:text-[22px] xl:text-[28px] font-[400] text-center">
+        <h5 className=" text-white font-segoe  text-[18px] md:text-[22px] xl:text-[28px] font-[400] text-center">
           AWARDED TO
         </h5>
         <Box className="bg-[#E5BA48] p-3">
@@ -42,12 +43,19 @@ const BestEmployeeCard = ({ image, name }: bestEmployee) => {
             {name}
           </h6>
         </Box>
-        <p className=" text-white text-[16px] md:text-[18px] xl:text-[20px] font-[400] text-center">
+        <Paragraph className=" text-white text-[16px] md:text-[18px] xl:text-[20px] font-[400] text-center">
           For your outstanding performance to our company
-        </p>
+        </Paragraph>
 
-        <Box className="max-w-[185px]">
-          <img src={semperis} alt="semperis" className="w-full" />
+        <Box className="max-w-[200px]">
+          {/* <img src={semperis} alt="semperis" className="w-full" /> */}
+          <img
+            src={
+              "https://static.vecteezy.com/system/resources/previews/027/127/592/original/microsoft-logo-microsoft-icon-transparent-free-png.png"
+            }
+            alt="MICROSOFT-LOGO"
+            className="w-full"
+          />
         </Box>
       </Flex>
     </Flex>

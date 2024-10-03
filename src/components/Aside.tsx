@@ -52,27 +52,27 @@ const Aside: React.FC = () => {
   };
   return (
     <>
-      <Box className="w-[64px] h-screen sticky py-4 bg-secondary-100">
+      <Box className="w-[10vw] md:w-[64px] h-screen sticky py-4 dark:bg-[#1f1f1f]  bg-slate-200">
         <Flex
           gap={24}
           align="center"
           justify="center"
-          className="py-6 bg-secondary-100"
+          className="py-6 dark:bg-[#1f1f1f]  bg-slate-200"
         >
           <RxHamburgerMenu
             size={24}
             onClick={showDrawer}
-            className="cursor-pointer"
+            className="cursor-pointer dark:text-white text-black"
           />
         </Flex>
         <Flex
           vertical
           justify="space-between"
-          className="bg-secondary-100"
+          className="dark:bg-[#1f1f1f]  bg-slate-200"
           gap={24}
         >
           {sidebarList?.map((value, index) => {
-            let isActive = currentPathname === value.route;
+            const isActive = currentPathname === value.route;
 
             const IconComponent = renderIcon(value?.icon, isActive);
 
@@ -80,7 +80,7 @@ const Aside: React.FC = () => {
               <Link
                 key={index}
                 to={value.route}
-                className={` bg-secondary-100 flex items-center p-2 py-1.5   justify-center text-white ${
+                className={` dark:bg-[#1f1f1f]  bg-slate-200 flex items-center p-2 py-1.5   justify-center dark:text-white text-black ${
                   isActive
                     ? "border-l-2  border-primary-100"
                     : "border-l-2 border-transparent"

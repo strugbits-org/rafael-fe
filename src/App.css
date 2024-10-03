@@ -1,11 +1,32 @@
+@font-face {
+  font-family: "Segoe UI";
+  src: url("./assets//fonts/Segoe_fonts/segoeui.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
-  color: #fff;
 }
-html {
-  background-color: #1f1f1f;
+.fade-enter {
+  opacity: 0;
+  transform: scale(0.95);
 }
-.ant-btn:hover {
-  background-color: #2f88ff !important;
+
+.fade-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.fade-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 300ms, transform 300ms;
 }
