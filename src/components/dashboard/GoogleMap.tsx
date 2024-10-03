@@ -38,7 +38,7 @@ const GoogleMapsComponent: React.FC = () => {
   const [selectedMarker, setSelectedMarker] = useState<MarkerData | null>(null);
 
   return (
-    <Flex className="h-[400px] rounded-[12px] overflow-hidden">
+    <Flex className="lg:h-[600px] 2xl:h-[500px] h-[400px]  rounded-[12px] overflow-hidden">
       <APIProvider apiKey={API_KEY}>
         <Map
           defaultCenter={defaultLocation}

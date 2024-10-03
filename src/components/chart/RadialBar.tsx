@@ -142,7 +142,7 @@ const RadialBar = ({ viewMode }: { viewMode: viewMode }) => {
         options={options}
         series={options.series}
         type="radialBar"
-        height={350}
+        height={300}
       />
     </Flex>
   );
