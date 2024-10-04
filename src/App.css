@@ -5,28 +5,12 @@
   font-style: normal;
 }
 
+/* General global transitions for all elements */
 * {
   margin: 0;
   padding: 0;
-}
-.fade-enter {
-  opacity: 0;
-  transform: scale(0.95);
-}
-
-.fade-enter-active {
-  opacity: 1;
-  transform: scale(1);
-  transition: opacity 300ms, transform 300ms;
-}
-
-.fade-exit {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.fade-exit-active {
-  opacity: 0;
-  transform: scale(0.95);
-  transition: opacity 300ms, transform 300ms;
+  transition-property: background-color, border-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 400ms;
+  will-change: background-color, color, border-color, fill, stroke; /* Hint browser */
 }

@@ -1,10 +1,10 @@
 import { Col, Flex, Row } from "antd";
-import Container from "../components/ui/Container";
+import Container from "../components/common/Container";
 import { Box } from "../components/ui/box";
-import AnnouncementCard from "../components/AnnouncementCard";
+import AnnouncementCard from "../components/ui/cards/AnnouncementCard";
 import { announcementsData, bestEmployeeData } from "../data/AnnoucementData";
 import { ReactNode } from "react";
-import BestEmployeeCard from "../components/BestEmployeeCard";
+import BestEmployeeCard from "../components/ui/cards/BestEmployeeCard";
 
 type InnerContainer = {
   children: ReactNode;

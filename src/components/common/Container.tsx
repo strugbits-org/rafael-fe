@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { Box } from "./box";
+import { Box } from "../ui/box";
 
 type ContainerProps = {
   children: ReactNode;

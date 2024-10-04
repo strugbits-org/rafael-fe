@@ -2,10 +2,11 @@ import { Outlet } from "react-router-dom";
 
 import { Flex } from "antd";
 import Aside from "./Aside";
+import { Box } from "../ui/box";
 import Navbar from "./Navbar";
-import { Box } from "./ui/box";
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
+  // DASHBOARD LAYOUT ALL THE PAGES ARE RENDERED INSIDE THIS LAYOUT
   return (
     <main className=" dark:bg-[#1f1f1f]  bg-slate-200">
       <Flex align="center" className="h-full">

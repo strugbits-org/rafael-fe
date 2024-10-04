@@ -1,5 +1,5 @@
 import { WiDaySunny, WiCloudy, WiRain, WiCloudyWindy } from "react-icons/wi";
-import { WeatherCondition } from "../@types";
+import { WeatherCondition } from "../../@types";
 import { IoMdSnow } from "react-icons/io";
 
 interface WeatherIconProps {
@@ -9,6 +9,7 @@ interface WeatherIconProps {
 }
 
 const WeatherIcon: React.FC<WeatherIconProps> = ({
+  //RENDERING WEATHER ICONS BASED ON THE WEATHER CONDITION USED ON PARTICIPANTS CARD | PARTICIPANTS TABLE ADD MORE ICONS AND CONDITIONS IF NEEDED AND UPDATE THE TYPES IN @types
   condition,
   size = 24,
   color = "currentColor",

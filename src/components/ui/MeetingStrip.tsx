@@ -1,14 +1,14 @@
 import { Divider, Flex } from "antd";
-import { Box } from "./ui/box";
+import { Box } from "./box";
 
-import microsoftBadge from "../assets/images/microsoft.png";
+import microsoftBadge from "../../assets/images/microsoft.png";
 // import { PiInstagramLogo } from "react-icons/pi";
 // import { SiFacebook, SiLinkedin } from "react-icons/si";
-import Paragraph from "./common/Paragraph";
-import insta from "../assets/images/insta.png";
-import fb from "../assets/images/fbicon.png";
-import linkedin from "../assets/images/ld.png";
-import { meetingDeatils } from "../data";
+import Paragraph from "../common/Paragraph";
+import insta from "../../assets/images/insta.png";
+import fb from "../../assets/images/fbicon.png";
+import linkedin from "../../assets/images/ld.png";
+import { meetingDeatils } from "../../data";
 
 const MeetingStrip = () => {
   return (
@@ -39,14 +39,16 @@ const MeetingStrip = () => {
         </Flex>
 
         <Flex vertical align="start" gap={10}>
+          {/* ===================MEETING TITLE======================= */}
           <Paragraph className="text-white text-[14px] md:text-[20px] lg:text-[24px]  xl:text-[28px] font-[400]">
             {meetingDeatils.meetingTitle}
           </Paragraph>
+          {/* ===================MEETING TIME======================= */}
           <Paragraph className="text-white text-[13px] md:text-[14px] xl:text-[15px] font-[400]">
             {meetingDeatils.startTime} - {meetingDeatils.endTime} (
             {meetingDeatils.duration} minutes)
           </Paragraph>
-
+          {/* ===================MEETING TYPE======================= */}
           <p className=" text-[13px] xl:mt-5 md:text-[14px] xl:text-[15px] font-[400] bg-[#DCFFD7] rounded-[16px] py-1 px-3 font-segoe border-[#1EBD04] text-[#1EBD04]">
             Internal meeting
           </p>
@@ -58,7 +60,7 @@ const MeetingStrip = () => {
         <Paragraph className="text-white text-[13px] md:text-[14px] xl:text-[15px] font-[400]">
           Organizer
         </Paragraph>
-
+        {/* ===================SPEAKER AVATAR AND MICROSOFT BADGE======================= */}
         <Box className="flex items-center  flex-wrap space-x-2">
           <Box className="relative">
             <img
@@ -72,6 +74,7 @@ const MeetingStrip = () => {
               alt="microsoftBadge"
             />
           </Box>
+          {/* ===================SPEAKER NAME======================= */}
           <Flex gap={10}>
             <Paragraph className="text-white text-[14px] md:text-[18px] xl:text-[20px] font-[400] leading-[1.2]">
               {meetingDeatils.speaker.name} <br />
@@ -80,6 +83,7 @@ const MeetingStrip = () => {
               </span>
             </Paragraph>
 
+            {/* ===================SPEAKER BADGEs======================= */}
             {meetingDeatils.badge?.length && (
               <Box className="flex space-x-1 pt-1">
                 {meetingDeatils.badge.map((badge, index) => (
@@ -98,10 +102,9 @@ const MeetingStrip = () => {
             )}
           </Flex>
         </Box>
+
+        {/* SOCIAL LINKS */}
         <Flex gap={8}>
-          {/* <PiInstagramLogo className="text-[24px] dark:text-white text-black " />
-          <SiFacebook className="text-[24px] dark:text-white text-black " />
-          <SiLinkedin className="text-[24px] dark:text-white text-black " /> */}
           <img src={insta} alt="insta" width={24} />
           <img src={fb} alt="fb" width={24} />
           <img src={linkedin} alt="linkedin" width={24} />

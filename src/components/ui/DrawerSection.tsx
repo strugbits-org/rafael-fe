@@ -5,18 +5,22 @@ import { GoHome } from "react-icons/go";
 import { MdOutlineNotificationsActive } from "react-icons/md";
 import { PiConfettiLight } from "react-icons/pi";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { sidebarList } from "../data";
+import { sidebarList } from "../../data";
 import { useSnapshot } from "valtio";
-import state from "../store/store";
+import state from "../../store/store";
 
 interface DrawerProps {
   onClose: () => void;
   open: boolean;
 }
 const DrawerSection: React.FC<DrawerProps> = ({ onClose, open }) => {
+  // DRAWER SECTION
+
   const location = useLocation();
   const currentPathname = location.pathname;
+
   const renderIcon = (iconName: string, isActive: boolean) => {
+    // ICONS RENDERER
     switch (iconName) {
       case "dashboard":
         return <GoHome size={24} fill={isActive ? "#fff" : "gray"} />;
@@ -44,6 +48,7 @@ const DrawerSection: React.FC<DrawerProps> = ({ onClose, open }) => {
   const snap = useSnapshot(state);
 
   const onChange = (checked: boolean) => {
+    //GLOGAL DARK MODE STATE
     state.darkMode = checked;
   };
 
@@ -85,10 +90,8 @@ const DrawerSection: React.FC<DrawerProps> = ({ onClose, open }) => {
             <Link
               key={index}
               to={value.route}
-              className={`  rounded-md flex gap-3 items-center p-2 py-1.5    justify-start text-zinc-500 ${
-                isActive
-                  ? "bg-primary-100 dark:text-white text-black font-bold"
-                  : ""
+              className={`  rounded-md flex gap-3 items-center p-2 py-1.5  dark:text-white text-black font-segoe  justify-start  ${
+                isActive ? "bg-primary-100  font-bold" : ""
               }`}
             >
               {IconComponent}

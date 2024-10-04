@@ -30,13 +30,13 @@ const SemiGuage = () => {
             show: true,
             color: labelColor,
             offsetY: 10,
-            fontSize: "12px",
+            fontSize: "14px",
             fontFamily: "segoe ui",
           },
           value: {
             offsetY: -30,
 
-            fontSize: "16px",
+            fontSize: "24px",
             fontFamily: "segoe ui",
             color: labelColor,
           },

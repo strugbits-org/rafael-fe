@@ -5,7 +5,7 @@ import WeatherCard from "../components/dashboard/WeatherCard";
 
 import GoogleMap from "../components/dashboard/GoogleMap";
 import ParticipantOverview from "../components/dashboard/ParticipantOverview";
-import Container from "../components/ui/Container";
+import Container from "../components/common/Container";
 import Participants from "../components/dashboard/Participants";
 import { useState } from "react";
 

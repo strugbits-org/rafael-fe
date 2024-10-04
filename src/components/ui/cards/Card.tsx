@@ -1,17 +1,18 @@
 import { BsClock } from "react-icons/bs";
-import Paragraph from "./common/Paragraph";
+import Paragraph from "../../common/Paragraph";
 import { Flex } from "antd";
-import { participantsDataType } from "../@types";
-import WeatherIcon from "./WeatherIconRender";
-import ParticipantDetailsModal from "./ParticipantsModal";
+import { participantsDataType } from "../../../@types";
+import WeatherIcon from "../WeatherIconRender";
+import ParticipantDetailsModal from "../ParticipantsModal";
 
 const Card = ({ data }: { data: participantsDataType }) => {
+  // CARD USED ON PARTICAPANTs SECTION ON DASHBOARD PAGE
   return (
     <Flex
       vertical
-      className="border dark:border-[#3A3A3A] border-gray-300 shadow-md font-segoe  p-6 rounded-lg max-w-[400px] w-full"
+      className="border dark:border-[#3A3A3A] border-gray-300 shadow-md font-segoe lg:px-10  lg:py-6 py-4 px-4 rounded-lg max-w-[400px] w-full"
     >
-      {/* USER NAME */}
+      {/* USER PICTURE */}
       <Flex align="center" className="mb-5">
         <img
           src={data.profilePic}
@@ -19,7 +20,8 @@ const Card = ({ data }: { data: participantsDataType }) => {
           className="w-16 h-16 rounded-full mr-4"
         />
         <div>
-          <Flex gap={5}>
+          {/* USER NAME AND BADGES */}
+          <Flex gap={"5 0"} wrap>
             <h2 className="text-[16px] font-bold dark:text-white text-black">
               {data.name}
             </h2>
@@ -40,14 +42,14 @@ const Card = ({ data }: { data: participantsDataType }) => {
               </Flex>
             )}
           </Flex>
-          <Paragraph className="dark:text-gray-400 text-[13px] text-gray-500 ">
+          <p className="dark:text-gray-400 text-[12px] text-gray-500 ">
             {data.jobTitle}
-          </Paragraph>
-
+          </p>
+          {/* IF ORGANISER ADD ORGANISER */}
           {data.organiser && (
-            <Paragraph className="dark:text-[#2A85FF] text-[12px] text-[#2A85FF]">
+            <p className="dark:text-[#2A85FF] text-[12px] text-[#2A85FF]">
               Organizer
-            </Paragraph>
+            </p>
           )}
         </div>
       </Flex>
@@ -55,28 +57,33 @@ const Card = ({ data }: { data: participantsDataType }) => {
       <div className="space-y-3  dark:text-white text-black">
         {/* location */}
         <Flex justify="space-between" align="start">
-          <Paragraph>Location</Paragraph>
+          <Paragraph className="font-[200]">Location</Paragraph>
           <Flex vertical gap={5}>
-            <Flex gap={10} align="center" justify="flex-end">
+            <Flex
+              gap={10}
+              align="center"
+              className="flex-col sm:flex-row"
+              justify="flex-end"
+            >
               <img src={data.flag} className="w-5" alt="USA" />
-              <Paragraph>{data.location}</Paragraph>
+              <Paragraph className="font-[200]">{data.location}</Paragraph>
             </Flex>
-            <Paragraph className="text-[10px] font-segoe dark:text-[#9F9F9F]  text-gray-500">
+            <p className="text-[10px] lg:text-[11px] font-segoe dark:text-[#9F9F9F]  text-gray-500">
               {data.timeZone}
-            </Paragraph>
+            </p>
           </Flex>
         </Flex>
         {/* time */}
         <Flex justify="space-between" align="start">
-          <Paragraph>Local Time</Paragraph>
+          <Paragraph className="font-[200]">Local Time</Paragraph>
           <Flex vertical gap={5}>
             <Flex gap={10} align="center" justify="flex-end">
               <BsClock />
               <Paragraph>{data.localTime}</Paragraph>
             </Flex>
-            <Paragraph className="text-[10px] font-segoe dark:text-[#9F9F9F]  text-gray-500">
+            <p className="text-[10px] lg:text-[11px] font-segoe dark:text-[#9F9F9F]  text-gray-500">
               {data.timeCalc}
-            </Paragraph>
+            </p>
           </Flex>
         </Flex>
         {/* weather */}
@@ -88,9 +95,9 @@ const Card = ({ data }: { data: participantsDataType }) => {
               <WeatherIcon condition={data.weather.condition} />
               <Paragraph>-{data.weather.CTemp}°C</Paragraph>
             </Flex>
-            <Paragraph className="text-[14px] text-right capitalize font-segoe dark:text-[#9F9F9F]  text-gray-500">
+            <p className="text-[10px] lg:text-[11px] text-right capitalize font-segoe dark:text-[#9F9F9F]  text-gray-500">
               {data.weather.condition}
-            </Paragraph>
+            </p>
           </Flex>
         </Flex>
       </div>

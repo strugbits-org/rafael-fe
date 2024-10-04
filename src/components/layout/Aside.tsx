@@ -1,6 +1,5 @@
-import { Box } from "./ui/box";
 import { Flex } from "antd";
-import { sidebarList } from "../data";
+
 import { Link, useLocation } from "react-router-dom";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { GoHome } from "react-icons/go";
@@ -8,7 +7,9 @@ import { MdOutlineNotificationsActive } from "react-icons/md";
 import { PiConfettiLight } from "react-icons/pi";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useState } from "react";
-import DrawerSection from "./DrawerSection";
+import { Box } from "../ui/box";
+import { sidebarList } from "../../data";
+import DrawerSection from "../ui/DrawerSection";
 
 const Aside: React.FC = () => {
   const location = useLocation();
@@ -24,6 +25,7 @@ const Aside: React.FC = () => {
   };
 
   const renderIcon = (iconName: string, isActive: boolean) => {
+    // ICONS RENDERER
     switch (iconName) {
       case "dashboard":
         return <GoHome size={24} fill={isActive ? "#2f88ff" : "gray"} />;
@@ -53,6 +55,7 @@ const Aside: React.FC = () => {
   return (
     <>
       <Box className="w-[10vw] md:w-[64px] h-screen sticky py-4 dark:bg-[#1f1f1f]  bg-slate-200">
+        {/* HAMBURGER MENU */}
         <Flex
           gap={24}
           align="center"
@@ -65,6 +68,8 @@ const Aside: React.FC = () => {
             className="cursor-pointer dark:text-white text-black"
           />
         </Flex>
+
+        {/* LINKS */}
         <Flex
           vertical
           justify="space-between"
@@ -80,7 +85,7 @@ const Aside: React.FC = () => {
               <Link
                 key={index}
                 to={value.route}
-                className={` dark:bg-[#1f1f1f]  bg-slate-200 flex items-center p-2 py-1.5   justify-center dark:text-white text-black ${
+                className={` flex items-center p-2 py-1.5   justify-center dark:text-white text-black ${
                   isActive
                     ? "border-l-2  border-primary-100"
                     : "border-l-2 border-transparent"
@@ -93,6 +98,7 @@ const Aside: React.FC = () => {
         </Flex>
       </Box>
 
+      {/* DRAWER */}
       <DrawerSection onClose={onClose} open={open} />
     </>
   );

@@ -1,7 +1,7 @@
 import { Flex } from "antd";
-import { annoucements } from "../@types";
-import { Box } from "./ui/box";
-import Paragraph from "./common/Paragraph";
+import { annoucements } from "../../../@types";
+import { Box } from "../box";
+import Paragraph from "../../common/Paragraph";
 
 const AnnouncementCard = ({
   title,

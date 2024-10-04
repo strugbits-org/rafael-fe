@@ -1,13 +1,13 @@
 import { Flex } from "antd";
-import FilterDropdown from "../FilterMenu";
+import FilterDropdown from "../ui/FilterMenu";
 import { ReactNode, useState } from "react";
 import Paragraph from "../common/Paragraph";
 import { IoClose } from "react-icons/io5";
 import { filterCountryData, participantsData } from "../../data/DashboardData";
 import { FaIdCard, FaTableList } from "react-icons/fa6";
 import { LuExpand } from "react-icons/lu";
-import ParticipantsTableView from "../Table/ParticipantsTableView";
-import Card from "../Card";
+import ParticipantsTableView from "../table/ParticipantsTableView";
+import Card from "../ui/cards/Card";
 
 interface ViewModeButtonProps {
   children: ReactNode;
@@ -139,6 +139,7 @@ const Participants = ({
           </Flex>
         )
       ) : (
+        // no data found
         <Paragraph className=" dark:text-white text-black text-[14px] md:text-[15px] lg:text-[16px] xl:text-[18px] font-[400]">
           No data found
         </Paragraph>

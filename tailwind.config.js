@@ -10,10 +10,13 @@ export default {
         "primary-100": "#2f88ff",
       },
       fontFamily: {
-        segoe: ['"Segoe UI"', "sans-serif"], // Add your custom font family
+        segoe: ['"Segoe UI"', "sans-serif"],
       },
       backgroundImage: {
         bgImageCelebration: "url('/src/assets/images/celebrationBGImage.png')",
+      },
+      transitionProperty: {
+        colors: "background-color, border-color, color, fill, stroke",
       },
     },
   },

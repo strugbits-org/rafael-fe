@@ -1,7 +1,7 @@
 import { Flex } from "antd";
 import RadialBar from "../chart/RadialBar";
 import Paragraph from "../common/Paragraph";
-import CustomSelect from "../CustomSelect";
+import CustomSelect from "../ui/CustomSelect";
 import { useState } from "react";
 
 type typeViewMode = "countries" | "continents";
@@ -30,6 +30,8 @@ const ParticipantOverview = () => {
           />
         </Flex>
       </Flex>
+
+      {/* RADIAL CHART  */}
       <RadialBar viewMode={viewMode} />
     </Flex>
   );

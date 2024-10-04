@@ -1,8 +1,8 @@
 import { Flex } from "antd";
-import { Box } from "./ui/box";
+import { Box } from "../box";
 // import semperis from "../assets/images/semperis.png";
-import { bestEmployee } from "../@types";
-import Paragraph from "./common/Paragraph";
+import { bestEmployee } from "../../../@types";
+import Paragraph from "../../common/Paragraph";
 
 const BestEmployeeCard = ({ image, name }: bestEmployee) => {
   return (

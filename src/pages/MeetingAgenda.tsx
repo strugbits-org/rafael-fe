@@ -1,10 +1,10 @@
 import { Flex } from "antd";
-import Container from "../components/ui/Container";
-import CustomTable from "../components/Table/ConferenceScheduleTable";
+import Container from "../components/common/Container";
+import CustomTable from "../components/table/ConferenceScheduleTable";
 import { useState } from "react";
-import MeetingPersonDetails from "../components/MeetingPersonDetails";
+import MeetingPersonDetails from "../components/ui/MeetingPersonDetails";
 import { ScheduleItem } from "../@types";
-import MeetingStrip from "../components/MeetingStrip";
+import MeetingStrip from "../components/ui/MeetingStrip";
 import { AnimatePresence, motion } from "framer-motion";
 
 const MeetingAgenda = () => {

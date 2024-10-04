@@ -29,7 +29,7 @@ export const sidebarList: SidebarItem[] = [
   },
 ];
 
-//MEETING AGENDA DATA ITS HERE BECAUSE IT IS USED IN BOTH MEETING AGENDA AND DASHBOARD PAGE
+//MEETING AGENDA DATA, ITS HERE BECAUSE IT IS USED IN BOTH MEETING AGENDA AND DASHBOARD PAGE
 
 export const meetingDeatils: meetingDeatilsType = {
   startTime: "10:10 am",

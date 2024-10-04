@@ -1,6 +1,6 @@
 import { Flex } from "antd";
 import React, { useState } from "react";
-import Paragraph from "./common/Paragraph";
+import Paragraph from "../common/Paragraph";
 import { IoFilter } from "react-icons/io5";
 
 interface Country {
@@ -14,6 +14,7 @@ interface FilterDropdownProps {
 }
 
 const FilterDropdown: React.FC<FilterDropdownProps> = ({
+  //CUSTOM FILTER DROPDOWN USED ON PARTICIPANTS SECTION TO FILTER TABLE AND CARD DATA
   countries,
   onClick,
 }) => {
@@ -31,6 +32,8 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
 
   return (
     <div className="w-[135px]    dark:text-white relative text-black">
+      {/* FILTER BUTTON */}
+
       <button
         onClick={toggleDropdown}
         className="flex items-center text-[14px]  gap-2 w-full px-4 py-2 dark:bg-[#292929] bg-gray-300 rounded-md focus:outline-none"
@@ -39,19 +42,25 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
 
         <span>Filters</span>
       </button>
+
+      {/* FILTER DROPDOWN */}
       {isOpen && (
         <Flex
           vertical
           gap={10}
           className="mt-2 dark:bg-[#292929] bg-gray-300 rounded-md shadow-lg z-40 absolute w-full "
         >
+          {/* NEAR ME */}
           <Flex className="border-b border-gray-700 px-4 py-2">
             <button onClick={(e) => clickHandler(e, "Near Me")}>Near Me</button>
           </Flex>
 
+          {/* COUNTRY */}
           <Flex className="px-4 ">
             <Paragraph className="text-[12px]">By Country</Paragraph>
           </Flex>
+
+          {/* COUNTRY LIST */}
           <Flex
             gap={5}
             vertical

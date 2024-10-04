@@ -2,45 +2,51 @@ import { useState } from "react";
 import Modal from "react-modal";
 import { FaTimes } from "react-icons/fa";
 
-import { participantsDataType } from "../@types";
+import { participantsDataType } from "../../@types";
 import WeatherIcon from "./WeatherIconRender";
 import { Flex } from "antd";
 import { AnimatePresence, motion } from "framer-motion";
 
-import InstaIcon from "../assets/icons/insta";
-import state from "../store/store";
-import FacebookIcon from "../assets/icons/facebook";
-import LinkedinIcon from "../assets/icons/linkedin";
+import InstaIcon from "../../assets/icons/insta";
+import state from "../../store/store";
+import FacebookIcon from "../../assets/icons/facebook";
+import LinkedinIcon from "../../assets/icons/linkedin";
 
 Modal.setAppElement("#root");
 
 const modalVariants = {
+  // USER FOR ANIMATING MODAL
   hidden: { opacity: 0, scale: 0.8 },
   visible: { opacity: 1, scale: 1 },
   exit: { opacity: 0, scale: 0.8 },
 };
 
 const ParticipantDetailsModal = ({
+  // CUSTOM MODAL USED ON PARTICIPANTS SECTION TO DISPLAY DETAILS
   data,
   fullWidthbtn,
 }: {
   data: participantsDataType;
   fullWidthbtn: boolean;
 }) => {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [modalIsOpen, setModalIsOpen] = useState(false); // FOR OPENING AND CLOSING MODAL
 
   const openModal = () => setModalIsOpen(true);
   const closeModal = () => setModalIsOpen(false);
-  const fullWidthButton = fullWidthbtn ? "w-full" : "w-auto";
+
+  const fullWidthButton = fullWidthbtn ? "w-full" : "w-auto"; // FOR MAKING BUTTON FULL WIDTH
 
   return (
     <>
+      {/* MODAL BUTTON */}
       <button
         className={`bg-[#2A85FF] font-segoe ${fullWidthButton} rounded-[28px] text-white px-4 sm:px-8 lg:px-12 py-2 hover:bg-blue-600 transition-colors whitespace-nowrap`}
         onClick={openModal}
       >
         View Details
       </button>
+
+      {/* MODAL */}
       <AnimatePresence>
         {modalIsOpen && (
           <Modal
@@ -56,6 +62,7 @@ const ParticipantDetailsModal = ({
               exit="exit"
               transition={{ duration: 0.3, ease: "easeInOut" }}
             >
+              {/* HEADER */}
               <div className="flex justify-between items-center mb-6 font-segoe">
                 <h2 className="text-2xl font-bold">Details</h2>
                 <button

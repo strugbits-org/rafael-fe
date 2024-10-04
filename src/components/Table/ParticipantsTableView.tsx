@@ -2,9 +2,9 @@ import { Flex } from "antd";
 import { useState } from "react";
 import microsoftBadge from "../../assets/images/microsoft.png";
 import { CiTempHigh } from "react-icons/ci";
-import WeatherIcon from "../WeatherIconRender";
+import WeatherIcon from "../ui/WeatherIconRender";
 import { participantsDataType } from "../../@types";
-import ParticipantsModal from "../ParticipantsModal";
+import ParticipantsModal from "../ui/ParticipantsModal";
 
 const header = [
   //TABLE HEADINGs

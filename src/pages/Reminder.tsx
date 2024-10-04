@@ -1,7 +1,7 @@
 import { Flex } from "antd";
 
-import Container from "../components/ui/Container";
-import ReminderCard from "../components/ReminderCard";
+import Container from "../components/common/Container";
+import ReminderCard from "../components/ui/cards/ReminderCard";
 import { remindersData } from "../data/ReminderData";
 import Paragraph from "../components/common/Paragraph";
 

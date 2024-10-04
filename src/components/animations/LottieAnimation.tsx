@@ -1,7 +1,8 @@
 import Lottie from "lottie-react";
-import rainyWeatherAnimation from "../assets/animations/rainy-weather.json";
-import state from "../store/store";
+
 import { useSnapshot } from "valtio";
+import state from "../../store/store";
+import RainyWeatherAnimationData from "../../assets/animations/rainy-weather.json";
 
 const RainyWeatherAnimation = () => {
   const snap = useSnapshot(state);
@@ -14,7 +15,7 @@ const RainyWeatherAnimation = () => {
 
   return (
     <Lottie
-      animationData={rainyWeatherAnimation}
+      animationData={RainyWeatherAnimationData}
       loop={true}
       className="h-32"
       style={style}

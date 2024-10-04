@@ -3,8 +3,9 @@ import Dashboard from "../pages/Dashboard";
 import MeetingAgenda from "../pages/MeetingAgenda";
 import Reminder from "../pages/Reminder";
 import Anouncement from "../pages/Anouncement";
-import DashboardLayout from "../components/DashboardLayout";
+
 import { AnimatePresence, motion } from "framer-motion";
+import DashboardLayout from "../components/layout/DashboardLayout";
 
 const Router = () => {
   const location = useLocation();

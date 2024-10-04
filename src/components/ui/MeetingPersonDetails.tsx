@@ -1,9 +1,9 @@
 import { Col, Divider, Flex, Row } from "antd";
-import Container from "./ui/Container";
+import Container from "../common/Container";
 import { IoArrowBackSharp } from "react-icons/io5";
-import { ScheduleItem } from "../@types";
-import { Box } from "./ui/box";
-import Paragraph from "./common/Paragraph";
+import { ScheduleItem } from "../../@types";
+import { Box } from "./box";
+import Paragraph from "../common/Paragraph";
 
 interface MeetingPersonDetailsProps {
   data: ScheduleItem | null;
@@ -18,12 +18,15 @@ const MeetingPersonDetails = ({
 
   return (
     <Container>
+      {/* BACK BUTTON */}
       <button
         onClick={() => setShowDetails(false)}
         className=" dark:text-white text-black text-[16px] md:text-[18px] lg:text-[20px] xl:text-[24px] font-[600]"
       >
         <IoArrowBackSharp size={24} />
       </button>
+
+      {/* MAIN CONTAINER */}
       <Box className="lg:px-16 py-10 px-5 dark:bg-[#1f1f1f]  bg-slate-200  mt-6 rounded-[16px]">
         <Flex vertical gap={16} className="max-w-[1800px] mx-auto">
           <Row gutter={[50, 24]} align={"middle"} justify={"start"}>
@@ -70,7 +73,7 @@ const MeetingPersonDetails = ({
                   className=" rounded-md  text-[14px] lg:text-[16px]    dark:text-white text-black "
                 >
                   <h5 className="font-[600] font-segoe">Description</h5>
-
+                  {/* PASS DESCRIPTION DATA HERE */}
                   <Paragraph>
                     Employee wellness programs are becoming increasingly
                     important as companies recognize the value of a healthy and
@@ -81,6 +84,9 @@ const MeetingPersonDetails = ({
 
                   <Flex vertical gap={4}>
                     <Paragraph>Key points:</Paragraph>
+
+                    {/* KEY POINTS ARRAY HERE */}
+
                     <ul className="list-disc list-inside font-segoe">
                       <li>Physical wellness</li>
                       <li>Physical wellness</li>
@@ -88,7 +94,7 @@ const MeetingPersonDetails = ({
                     </ul>
                   </Flex>
                 </Flex>
-                {/* DURATION */}
+                {/* TIME | DURATION */}
                 <Flex
                   vertical
                   className="text-[14px] dark:text-white text-black lg:text-[16px]"

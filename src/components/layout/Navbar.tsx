@@ -1,9 +1,10 @@
 // Navbar.tsx
 import { Flex, Switch } from "antd";
-import { Box } from "./ui/box";
+
 import { FaShareSquare } from "react-icons/fa";
-import state from "../store/store";
-import Paragraph from "./common/Paragraph";
+import state from "../../store/store";
+import { Box } from "../ui/box";
+import Paragraph from "../common/Paragraph";
 
 const Navbar = () => {
   const onChange = (checked: boolean) => {

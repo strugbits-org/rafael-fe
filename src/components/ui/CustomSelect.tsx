@@ -5,6 +5,7 @@ const data = [
   { value: "countries", label: "Countries" },
 ];
 const CustomSelect = ({ onChange }: { onChange: (value: string) => void }) => {
+  // COUNTRY SELECT FOR PARTICIPANTS OVERVIEW SECTION
   return (
     <Select
       defaultValue="Continents"

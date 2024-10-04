@@ -1,32 +1,33 @@
 import ReactApexChart from "react-apexcharts";
 import { getContinentCounts, getCountryCounts } from "../../utils";
 import { particapantsGeoData } from "../../data/DashboardData";
-
 import { Flex } from "antd";
 import Paragraph from "../common/Paragraph";
 import { useSnapshot } from "valtio";
 import state from "../../store/store";
 
+// Define the type for the viewMode prop
 type viewMode = "countries" | "continents";
 
 const RadialBar = ({ viewMode }: { viewMode: viewMode }) => {
+  // Get the current state snapshot
   const snap = useSnapshot(state);
 
-  // Data for continents
+  // Get data for continents
   const totalContinents = getContinentCounts(particapantsGeoData);
   const continentData = {
     series: Object.values(totalContinents),
     labels: Object.keys(totalContinents),
   };
 
-  // Data for countries
+  // Get data for countries
   const totalCountries = getCountryCounts(particapantsGeoData);
   const countryData = {
     series: Object.values(totalCountries),
     labels: Object.keys(totalCountries),
   };
 
-  // Dynamic color assignment
+  // Function to generate colors dynamically
   const generateColors = (numItems: number) => {
     const predefinedColors = [
       "#1E90FF",
@@ -41,16 +42,13 @@ const RadialBar = ({ viewMode }: { viewMode: viewMode }) => {
       "#228B22",
     ];
 
+    // If we need more colors than predefined, generate random colors
     if (numItems > predefinedColors.length) {
       return [
         ...predefinedColors,
         ...Array(numItems - predefinedColors.length)
           .fill(null)
-          .map(() => {
-            const randomColor =
-              "#" + Math.floor(Math.random() * 16777215).toString(16);
-            return randomColor;
-          }),
+          .map(() => "#" + Math.floor(Math.random() * 16777215).toString(16)),
       ];
     }
 
@@ -62,10 +60,10 @@ const RadialBar = ({ viewMode }: { viewMode: viewMode }) => {
   const totalParticipants = chartData.series.reduce((a, b) => a + b, 0);
   const colors = generateColors(chartData.series.length);
 
-  // ApexChart options
+  // ApexChart options configuration
   const options = {
-    series: chartData.series.map(
-      (e) => Number(((e / totalParticipants) * 100).toFixed(2)) // Ensure series is numeric
+    series: chartData.series.map((e) =>
+      Number(((e / totalParticipants) * 100).toFixed(2))
     ),
     chart: {
       height: 350,
@@ -73,6 +71,9 @@ const RadialBar = ({ viewMode }: { viewMode: viewMode }) => {
     },
     plotOptions: {
       radialBar: {
+        track: {
+          background: snap.darkMode ? "#292929" : "#d0d5db",
+        },
         dataLabels: {
           name: {
             fontSize: "22px",
@@ -86,7 +87,7 @@ const RadialBar = ({ viewMode }: { viewMode: viewMode }) => {
             label: "Total",
             color: snap.darkMode ? "white" : "black",
             formatter: function () {
-              return chartData.series.reduce((a, b) => a + b, 0).toString(); // Convert number to string
+              return totalParticipants.toString();
             },
           },
         },
@@ -111,39 +112,49 @@ const RadialBar = ({ viewMode }: { viewMode: viewMode }) => {
 
   return (
     <Flex justify="space-between" id="chart" gap={20} wrap align="center">
-      <Flex vertical gap={10}>
+      {/* LABELS, COLORS, AND COUNTS */}
+      <Flex
+        vertical
+        className="flex-grow xl:pr-10 max-w-[400px]"
+        justify="space-between"
+        gap={10}
+      >
         {chartData.labels.map((label, index) => (
-          <Flex
-            key={label}
-            style={{
-              display: "flex",
-              alignItems: "center",
-              marginRight: "20px",
-              marginBottom: "10px",
-            }}
-          >
-            <div
-              style={{
-                width: "15px",
-                height: "15px",
-                backgroundColor: colors[index],
-                marginRight: "10px",
-              }}
-            ></div>
-            <Paragraph className="text-black dark:text-white text-[13px] md:text-[14px] xl:text-[15px] font-[400]">
-              {label}
+          <Flex key={label} flex={1} justify="space-between" align="center">
+            {/* Color indicator */}
+            <Flex gap={5}>
+              <div
+                style={{
+                  width: "15px",
+                  height: "15px",
+                  backgroundColor: colors[index],
+                  marginRight: "10px",
+                }}
+              ></div>
+              {/* Label and count */}
+              <Paragraph className="text-black dark:text-white text-[13px] md:text-[14px] xl:text-[15px] font-[200]">
+                {label}
+              </Paragraph>
+            </Flex>
+
+            <Paragraph className="text-black dark:text-white text-[13px] md:text-[14px] xl:text-[15px] font-[200]">
+              {chartData.series[index] < 10
+                ? `0${chartData.series[index]}`
+                : chartData.series[index]}
             </Paragraph>
           </Flex>
         ))}
       </Flex>
 
-      {/* Radial Bar */}
-      <ReactApexChart
-        options={options}
-        series={options.series}
-        type="radialBar"
-        height={300}
-      />
+      {/* Radial Bar Chart */}
+      <Flex className="2xl:-mr-10">
+        <ReactApexChart
+          options={options}
+          series={options.series}
+          type="radialBar"
+          height={300}
+        />
+      </Flex>
     </Flex>
   );
 };
