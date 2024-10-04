@@ -6,8 +6,9 @@ import { IoClose } from "react-icons/io5";
 import { filterCountryData, participantsData } from "../../data/DashboardData";
 import { FaIdCard, FaTableList } from "react-icons/fa6";
 import { LuExpand } from "react-icons/lu";
-import ParticipantsTableView from "../table/ParticipantsTableView";
+
 import Card from "../ui/cards/Card";
+import ParticipantsTableView from "../table/ParticipantsTableView";
 
 interface ViewModeButtonProps {
   children: ReactNode;

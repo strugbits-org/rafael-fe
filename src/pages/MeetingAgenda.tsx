@@ -1,11 +1,12 @@
 import { Flex } from "antd";
 import Container from "../components/common/Container";
-import CustomTable from "../components/table/ConferenceScheduleTable";
+
 import { useState } from "react";
 import MeetingPersonDetails from "../components/ui/MeetingPersonDetails";
 import { ScheduleItem } from "../@types";
 import MeetingStrip from "../components/ui/MeetingStrip";
 import { AnimatePresence, motion } from "framer-motion";
+import ConferenceScheduleTable from "../components/table/ConferenceScheduleTable";
 
 const MeetingAgenda = () => {
   const [showDetails, setShowDetails] = useState(false);
@@ -38,7 +39,7 @@ const MeetingAgenda = () => {
               gap={32}
             >
               <MeetingStrip />
-              <CustomTable onClick={detailClickHandler} />
+              <ConferenceScheduleTable onClick={detailClickHandler} />
             </Flex>
           </motion.div>
         ) : (
