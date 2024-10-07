@@ -90,8 +90,10 @@ const DrawerSection: React.FC<DrawerProps> = ({ onClose, open }) => {
             <Link
               key={index}
               to={value.route}
-              className={`  rounded-md flex gap-3 items-center p-2 py-1.5  dark:text-white text-black font-segoe  justify-start  ${
-                isActive ? "bg-primary-100  font-bold" : ""
+              className={`  rounded-md flex gap-3 items-center p-2 py-1.5   text-black font-segoe  justify-start  ${
+                isActive
+                  ? "bg-primary-100  font-bold text-black"
+                  : "dark:text-[#8a8a8a]"
               }`}
             >
               {IconComponent}

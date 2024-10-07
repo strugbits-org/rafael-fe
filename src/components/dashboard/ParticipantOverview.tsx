@@ -13,14 +13,14 @@ const ParticipantOverview = () => {
     <Flex
       vertical
       gap={20}
-      className="dark:bg-[#1f1f1f] bg-slate-200 rounded-[12px] py-5 lg:px-10 px-5 h-full"
+      className="dark:bg-[#1f1f1f] bg-slate-200 rounded-[12px]  pt-5  lg:px-10 px-5 h-full"
     >
-      <Flex justify="space-between" wrap className="gap-y-5">
+      <Flex justify="space-between" className="gap-y-5 flex-col 2xl:flex-row">
         <Flex vertical gap={10}>
           <Paragraph className="dark:text-white text-black text-[16px] md:text-[20px] xl:text-[24px] font-[400]">
-            Participants Overview
+            Participants overview
           </Paragraph>
-          <Paragraph className="text-black dark:text-[#828690] text-[13px] md:text-[14px] xl:text-[15px] font-[400]">
+          <Paragraph className="text-black dark:text-[#81858f] text-[13px] md:text-[14px] xl:text-[15px] font-[400]">
             This chart visualizes the geographical distribution of participants.
           </Paragraph>
         </Flex>

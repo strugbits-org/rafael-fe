@@ -31,7 +31,8 @@ const ParticipantsTableView = ({
 
   return (
     <div className="w-full  h-full overflow-hidden rounded-[10px] border border-slate-300 dark:border-[#383838] shadow-lg">
-      <div className={`overflow-auto ${tableHeight} `}>
+      {/* hidden-scrollbar class is defined in App.css use this class if want to hide scrollbar, if not  then use custom-scrollbar */}
+      <div className={`overflow-auto ${tableHeight} hidden-scrollbar`}>
         <table className="min-w-full   ">
           {/* Table header */}
           <thead className="dark:bg-[#292929]  dark:text-white text-black sticky top-0 z-30  bg-gray-100 ">
@@ -70,11 +71,11 @@ const ParticipantsTableView = ({
                       <img
                         src={row.profilePic}
                         alt={row.name}
-                        className="w-10 h-10 rounded-full"
+                        className="w-14 h-14 rounded-full"
                       />
                       <img
                         src={microsoftBadge}
-                        className="absolute right-0 bottom-0 w-4"
+                        className="absolute right-0 bottom-0 w-5"
                         alt="microsoftBadge"
                       />
                     </Flex>
@@ -125,14 +126,22 @@ const ParticipantsTableView = ({
                     <Flex vertical>
                       {row.location}
                       <span className="text-[10px] font-segoe dark:text-[#9F9F9F]  text-gray-500">
-                        {row.timeCalc}
+                        {row.timeZone}
                       </span>
                     </Flex>
                   </Flex>
                 </td>
 
                 {/* Local Time */}
-                <td className="px-6 py-5 whitespace-nowrap">{row.localTime}</td>
+                <td className="px-6 py-5 whitespace-nowrap">
+                  {" "}
+                  <Flex vertical>
+                    {row.localTime}
+                    <span className="text-[10px] font-segoe dark:text-[#9F9F9F]  text-gray-500">
+                      {row.timeCalc}
+                    </span>
+                  </Flex>
+                </td>
 
                 {/* Weather */}
                 <td className="px-6 py-5 whitespace-nowrap">

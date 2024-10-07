@@ -13,9 +13,10 @@ import { meetingDeatils } from "../../data";
 const MeetingStrip = () => {
   return (
     <Flex
-      className="w-full bg-[#1b81cf] py-6 xl:px-16 lg:px-10 px-5 gap-y-5 flex-wrap rounded-[12px]"
+      className="w-full bg-meetingStripBg bg-cover bg-no-repeat bg-center items-start py-6 xl:px-16 lg:px-10 px-5 gap-y-8 flex-wrap rounded-[12px]"
       justify="space-between"
     >
+      {/* ===================MEETING DATE | MEETING TITLE  | MEETING TIME | MEETING DURATION ======================= */}
       <Flex
         align="center"
         className="justify-center sm:justify-start"
@@ -56,7 +57,7 @@ const MeetingStrip = () => {
       </Flex>
 
       {/* ===================ORGANIZER DETAILS======================= */}
-      <Flex vertical align="start" gap={20}>
+      <Flex vertical align="start" gap={12}>
         <Paragraph className="text-white text-[13px] md:text-[14px] xl:text-[15px] font-[400]">
           Organizer
         </Paragraph>

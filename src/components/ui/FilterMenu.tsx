@@ -40,7 +40,7 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
       >
         <IoFilter />
 
-        <span>Filters</span>
+        <span>Filter</span>
       </button>
 
       {/* FILTER DROPDOWN */}
@@ -65,7 +65,7 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
             gap={5}
             vertical
             align="start"
-            className="px-4  overflow-y-auto max-h-[100px]  pb-1"
+            className="px-4  overflow-y-auto max-h-[150px]  pb-1"
           >
             {countries.map((country) => (
               <button

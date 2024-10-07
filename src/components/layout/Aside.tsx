@@ -3,13 +3,14 @@ import { Flex } from "antd";
 import { Link, useLocation } from "react-router-dom";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { GoHome } from "react-icons/go";
-import { MdOutlineNotificationsActive } from "react-icons/md";
-import { PiConfettiLight } from "react-icons/pi";
+import { MdOutlineCelebration } from "react-icons/md";
+
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useState } from "react";
 import { Box } from "../ui/box";
 import { sidebarList } from "../../data";
 import DrawerSection from "../ui/DrawerSection";
+import NotificationIcon from "../../assets/icons/notification";
 
 const Aside: React.FC = () => {
   const location = useLocation();
@@ -37,15 +38,13 @@ const Aside: React.FC = () => {
           />
         );
       case "reminders":
+        return <NotificationIcon color={isActive ? "#2f88ff" : "gray"} />;
+      case "updates":
         return (
-          <MdOutlineNotificationsActive
+          <MdOutlineCelebration
             size={24}
             fill={isActive ? "#2f88ff" : "gray"}
           />
-        );
-      case "updates":
-        return (
-          <PiConfettiLight size={24} fill={isActive ? "#2f88ff" : "gray"} />
         );
 
       default:

@@ -15,10 +15,10 @@ const MeetingCard = () => {
     <Flex
       justify="space-between"
       wrap
-      className="w-full bg-[#1b81cf] py-5 xl:px-16 lg:px-10 px-5 rounded-[12px]"
+      className="w-full relative bg-meetingStripBg py-5  bg-cover bg-no-repeat bg-center 2xl:px-10 px-5 rounded-[12px] h-full"
     >
       {/* =================== ORAGANISER, TITLE AND DURATION ================== */}
-      <Flex align="start" gap={25} vertical>
+      <Flex align="start" gap={25} justify="space-between" vertical>
         {/* ===================ORGANIZER DEATILS================== */}
         <Flex vertical align="start" gap={20}>
           <Box className="flex items-center flex-wrap   space-x-2 gap-y-2">
@@ -80,7 +80,7 @@ const MeetingCard = () => {
         </Flex>
       </Flex>
       {/* =================== DATE, TIME AND SOCIAL ICONS ================== */}
-      <Flex vertical gap={20} className="pt-2">
+      <Flex vertical gap={20} justify="space-between" className="pt-2">
         {/* DATE  */}
         <Flex vertical gap={1}>
           <Paragraph className="text-white text-[13px] md:text-[14px] xl:text-[15px] font-[400]">
@@ -104,9 +104,17 @@ const MeetingCard = () => {
           {/* <PiInstagramLogo className="text-[24px] dark:text-white text-black " />
 <SiFacebook className="text-[24px] dark:text-white text-black " />
 <SiLinkedin className="text-[24px] dark:text-white text-black " /> */}
-          <img src={insta} alt="insta" width={24} />
-          <img src={fb} alt="fb" width={24} />
-          <img src={linkedin} alt="linkedin" width={24} />
+          <img
+            src={insta}
+            alt="insta"
+            className="xl:w-[24px] sm:w-[20px] w-[18px]"
+          />
+          <img src={fb} alt="fb" className="xl:w-[24px] sm:w-[20px] w-[18px]" />
+          <img
+            src={linkedin}
+            alt="linkedin"
+            className="xl:w-[24px] sm:w-[20px] w-[18px]"
+          />
         </Flex>
       </Flex>
     </Flex>

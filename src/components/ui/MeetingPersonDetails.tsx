@@ -27,7 +27,7 @@ const MeetingPersonDetails = ({
       </button>
 
       {/* MAIN CONTAINER */}
-      <Box className="lg:px-16 py-10 px-5 dark:bg-[#1f1f1f]  bg-slate-200  mt-6 rounded-[16px]">
+      <Box className="lg:px-16 pt-10 pb-12 px-5 dark:bg-[#1f1f1f]  bg-slate-200  mt-6 rounded-[16px]">
         <Flex vertical gap={16} className="max-w-[1800px] mx-auto">
           <Row gutter={[50, 24]} align={"middle"} justify={"start"}>
             {/* TOPIC, DATE, DESCRIPTION */}
@@ -55,7 +55,7 @@ const MeetingPersonDetails = ({
                 </h1>
                 {/* DATE */}
                 <Flex
-                  className="bg-[#2A85FF] max-w-[400px] dark:text-white text-black  rounded-md justify-between p-4 text-[14px] lg:text-[16px] uppercase  flex-col sm:flex-row  font-[500]"
+                  className="bg-[#2A85FF] max-w-[350px] dark:text-white text-black  rounded-md justify-between p-4 text-[14px] lg:text-[16px] uppercase  flex-col sm:flex-row  font-[500]"
                   align="center"
                 >
                   <Paragraph>Thursday</Paragraph>
@@ -142,8 +142,8 @@ const MeetingPersonDetails = ({
               md={{ span: 24 }}
               lg={{ span: 12 }}
             >
-              <Box className="p-2 border-[#DBDBDB] border-[4px] rounded-full w-fit mx-auto">
-                <Box className="rounded-full max-w-[650px] max-h-[650px] overflow-hidden">
+              <Box className="p-2 border-[#DBDBDB] border-[4px] rounded-full   max-h-[520px] max-w-[520px] mx-auto">
+                <Box className="rounded-full max-w-[500px] max-h-[500px] overflow-hidden">
                   <img
                     className="w-full "
                     src={data?.speaker.avatarUrl}

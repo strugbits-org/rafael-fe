@@ -9,15 +9,16 @@ interface Props {
 }
 const ConferenceScheduleTable = ({ onClick }: Props) => {
   return (
-    <Box className="border border-[#3A3A3A] w-full  h-full overflow-hidden rounded-lg  shadow-lg ">
+    <Box className="border border-slate-300 dark:border-[#383838]  w-full  h-full overflow-hidden rounded-lg  shadow-lg ">
       <Box className={`overflow-auto`}>
         <table className="min-w-full   ">
-          <thead className=" dark:bg-[#292929] font-segoe bg-gray-300 sticky top-0 z-10 dark:text-white text-black">
+          <thead className=" dark:bg-[#292929] font-segoe bg-gray-100 sticky top-0 z-10 dark:text-white text-black">
             <tr className="text-left">
               {AgendaTableHeaderData.map((item, index) => (
                 <th
                   key={index}
-                  className={`${index === 0 ? "pl-5" : ""} py-6 text-left`}
+                  // className={`${index === 0 ? "pl-5" : ""} py-6 text-left `}
+                  className="px-5 py-8 whitespace-nowrap text-left"
                 >
                   {item}
                 </th>
@@ -29,7 +30,7 @@ const ConferenceScheduleTable = ({ onClick }: Props) => {
               <tr key={index} className="border-t border-gray-700">
                 <td className="px-5 py-8 whitespace-nowrap">{item.time}</td>
                 <td className="px-5 py-8 whitespace-nowrap">
-                  <Box className="flex items-center space-x-2">
+                  <Box className="flex items-center flex-wrap gap-y-2 space-x-2">
                     <img
                       src={item.speaker.avatarUrl}
                       alt={item.speaker.name}
@@ -54,7 +55,7 @@ const ConferenceScheduleTable = ({ onClick }: Props) => {
                     )}
                   </Box>
                 </td>
-                <td className="px-5 py-8 whitespace-nowrap">{item.topic}</td>
+                <td className="px-5 py-8 whitespace-nowrap ">{item.topic}</td>
                 <td className="px-5 py-8 xl:text-[14px] text-[12px] whitespace-nowrap">
                   <span className="xl:text-[24px] md:text-[20px] text-[16px]">
                     {item.duration}

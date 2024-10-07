@@ -14,3 +14,37 @@
   transition-duration: 400ms;
   will-change: background-color, color, border-color, fill, stroke; /* Hint browser */
 }
+
+/* Apply to WebKit browsers (Chrome, Safari, Edge) */
+/* USE THIS IF WANT SCROLL VISIBLE  */
+.custom-scrollbar {
+  /* This will reduce the width of the scrollbar */
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #81858f transparent; /* Color of scrollbar for Firefox */
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px; /* Set the width of the scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #81858f; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded edges for the scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: transparent; /* Make the track transparent */
+}
+
+/* USE THIS IF WANT TO HIDE SCROLLBAR */
+.hidden-scrollbar {
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For IE and Edge */
+}
+
+.hidden-scrollbar::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and WebKit browsers */
+}
+html {
+  scroll-behavior: auto;
+}

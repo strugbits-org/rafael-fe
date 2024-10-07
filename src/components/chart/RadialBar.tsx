@@ -84,8 +84,8 @@ const RadialBar = ({ viewMode }: { viewMode: viewMode }) => {
           },
           total: {
             show: true,
-            label: "Total",
-            color: snap.darkMode ? "white" : "black",
+            label: "Participants",
+            color: snap.darkMode ? "#828690" : "black",
             formatter: function () {
               return totalParticipants.toString();
             },
@@ -115,14 +115,20 @@ const RadialBar = ({ viewMode }: { viewMode: viewMode }) => {
       {/* LABELS, COLORS, AND COUNTS */}
       <Flex
         vertical
-        className="flex-grow xl:pr-10 max-w-[400px]"
+        className="flex-grow 2xl:pr-10 xl:pr-8 lg:max-w-[400px] max-w-[200px]"
         justify="space-between"
         gap={10}
       >
         {chartData.labels.map((label, index) => (
-          <Flex key={label} flex={1} justify="space-between" align="center">
+          <Flex
+            key={label}
+            flex={1}
+            justify="space-between"
+            gap={20}
+            align="center"
+          >
             {/* Color indicator */}
-            <Flex gap={5}>
+            <Flex gap={5} align="center">
               <div
                 style={{
                   width: "15px",

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Modal from "react-modal";
-import { FaTimes } from "react-icons/fa";
 
 import { participantsDataType } from "../../@types";
 import WeatherIcon from "./WeatherIconRender";
@@ -11,6 +10,7 @@ import InstaIcon from "../../assets/icons/insta";
 import state from "../../store/store";
 import FacebookIcon from "../../assets/icons/facebook";
 import LinkedinIcon from "../../assets/icons/linkedin";
+import { IoMdClose } from "react-icons/io";
 
 Modal.setAppElement("#root");
 
@@ -40,10 +40,10 @@ const ParticipantDetailsModal = ({
     <>
       {/* MODAL BUTTON */}
       <button
-        className={`bg-[#2A85FF] font-segoe ${fullWidthButton} rounded-[28px] text-white px-4 sm:px-8 lg:px-12 py-2 hover:bg-blue-600 transition-colors whitespace-nowrap`}
+        className={`bg-[#2A85FF] font-segoe ${fullWidthButton} rounded-[28px] text-white px-4 sm:px-6 lg:px-8 py-2 hover:bg-blue-600 transition-colors whitespace-nowrap`}
         onClick={openModal}
       >
-        View Details
+        View details
       </button>
 
       {/* MODAL */}
@@ -52,7 +52,7 @@ const ParticipantDetailsModal = ({
           <Modal
             isOpen={modalIsOpen}
             onRequestClose={closeModal}
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 dark:bg-[#292929] bg-slate-200 text-black dark:text-white p-6 rounded-lg w-full max-w-[350px]"
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 dark:bg-[#292929] bg-slate-200 text-black dark:text-white p-6 rounded-lg w-full max-w-[350px] md:max-w-[380px] lg:max-w-[460px]"
             overlayClassName="fixed inset-0 bg-black bg-opacity-75 z-50"
           >
             <motion.div
@@ -69,7 +69,7 @@ const ParticipantDetailsModal = ({
                   onClick={closeModal}
                   className="text-gray-400 hover:text-white"
                 >
-                  <FaTimes size={24} />
+                  <IoMdClose size={24} />
                 </button>
               </div>
               {/* User details */}
@@ -170,7 +170,7 @@ const ParticipantDetailsModal = ({
                 {/* SOCIAL LINKS */}
                 <Flex className="justify-between items-center">
                   <span>Social Links</span>
-                  <div className="flex space-x-2">
+                  <div className="flex space-x-2 ">
                     <InstaIcon color={state.darkMode ? "#DBDBDB" : "#000"} />
                     <FacebookIcon color={state.darkMode ? "#DBDBDB" : "#000"} />
                     <LinkedinIcon color={state.darkMode ? "#DBDBDB" : "#000"} />

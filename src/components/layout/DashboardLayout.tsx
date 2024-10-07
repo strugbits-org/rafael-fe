@@ -17,6 +17,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
               <Navbar />
             </Box>
             <Box
+              id="mainLayout"
               style={{ height: "calc(100vh - 110px)" }}
               className={`overflow-y-auto overflow-x-hidden mt-2 pr-4 sm:pr-2 pl-4`}
             >

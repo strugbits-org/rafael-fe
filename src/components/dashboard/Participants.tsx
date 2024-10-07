@@ -4,11 +4,14 @@ import { ReactNode, useState } from "react";
 import Paragraph from "../common/Paragraph";
 import { IoClose } from "react-icons/io5";
 import { filterCountryData, participantsData } from "../../data/DashboardData";
-import { FaIdCard, FaTableList } from "react-icons/fa6";
 import { LuExpand } from "react-icons/lu";
 
 import Card from "../ui/cards/Card";
 import ParticipantsTableView from "../table/ParticipantsTableView";
+import { BsListTask } from "react-icons/bs";
+import CardViewIcon from "../../assets/icons/cardView";
+import { useSnapshot } from "valtio";
+import state from "../../store/store";
 
 interface ViewModeButtonProps {
   children: ReactNode;
@@ -45,6 +48,8 @@ const Participants = ({
 }) => {
   const [selectedFilter, setSelectedFilter] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<"table" | "card">("table");
+
+  const darkModeState = useSnapshot(state);
 
   const filterClickHandler = (
     e: React.MouseEvent<HTMLButtonElement>,
@@ -98,15 +103,23 @@ const Participants = ({
               isActive={viewMode === "table"}
               onClick={() => setViewMode("table")}
             >
-              <FaTableList />
+              <BsListTask />
               Table
             </ViewModeButton>
             <ViewModeButton
               isActive={viewMode === "card"}
               onClick={() => setViewMode("card")}
             >
-              <FaIdCard />
-              Card
+              <CardViewIcon
+                color={
+                  viewMode === "card"
+                    ? "#fff"
+                    : darkModeState.darkMode
+                    ? "#fff"
+                    : "#000"
+                }
+              />
+              Cards
             </ViewModeButton>
 
             <button

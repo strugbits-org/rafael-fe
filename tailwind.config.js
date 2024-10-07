@@ -14,6 +14,7 @@ export default {
       },
       backgroundImage: {
         bgImageCelebration: "url('/src/assets/images/celebrationBGImage.png')",
+        meetingStripBg: "url('/src/assets/images/meetingStripBg.png')",
       },
       transitionProperty: {
         colors: "background-color, border-color, color, fill, stroke",

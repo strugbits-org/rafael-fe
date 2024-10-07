@@ -10,7 +10,7 @@ const Card = ({ data }: { data: participantsDataType }) => {
   return (
     <Flex
       vertical
-      className="border dark:border-[#3A3A3A] border-gray-300 shadow-md font-segoe lg:px-10  lg:py-6 py-4 px-4 rounded-lg max-w-[400px] w-full"
+      className="border dark:border-[#3A3A3A] border-gray-300 shadow-md font-segoe lg:px-10  lg:py-6 py-4 px-4 rounded-lg max-w-[400px] md:max-w-[48%] lg:max-w-[400px] w-full"
     >
       {/* USER PICTURE */}
       <Flex align="center" className="mb-5">
@@ -75,7 +75,7 @@ const Card = ({ data }: { data: participantsDataType }) => {
         </Flex>
         {/* time */}
         <Flex justify="space-between" align="start">
-          <Paragraph className="font-[200]">Local Time</Paragraph>
+          <Paragraph className="font-[200]">Local time</Paragraph>
           <Flex vertical gap={5}>
             <Flex gap={10} align="center" justify="flex-end">
               <BsClock />

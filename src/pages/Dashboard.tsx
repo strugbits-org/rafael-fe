@@ -16,7 +16,7 @@ const Dashboard = () => {
       {/* 1st section */}
       <Row
         gutter={[16, 16]}
-        className={participantsExpandView ? "hidden" : "flex"}
+        className={participantsExpandView ? "hidden" : "flex items-stretch"}
       >
         <Col xl={14} md={24} sm={24}>
           <MeetingCard />
