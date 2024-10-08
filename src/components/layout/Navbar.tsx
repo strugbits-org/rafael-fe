@@ -15,7 +15,7 @@ const Navbar = () => {
     <Flex
       align="start"
       justify="space-between"
-      className="xl:pt-3 pt-5 pb-2"
+      className="xl:pt-3 sm:pt-[18px] pt-[20px] pb-2"
       gap={6}
     >
       <h1 className="font-bold dark:text-white font-segoe text-black xl:text-[28px] md:text-[22px] text-[18px]">
@@ -24,25 +24,25 @@ const Navbar = () => {
       <Box>
         <Flex align="start" className="lg:gap-3 gap-1">
           <Flex className="lg:gap-3 gap-1">
-            <Box className="py-[3px]   text-[12px] md:text-[12px]  px-2 outline-[1px] border-zinc-600 rounded-sm dark:bg-secondary-100 bg-slate-300">
+            <Box className="py-[3px]   text-[12px] md:text-[14px]  px-2 outline-[1px] border-zinc-600 rounded-sm dark:bg-secondary-100 bg-slate-300">
               <Paragraph className="text-center dark:text-white text-black font-semibold">
                 3
               </Paragraph>
             </Box>
-            <Box className="py-[3px]  text-[12px] md:text-[12px] px-2 outline-[1px] border-zinc-600 rounded-sm dark:bg-secondary-100 bg-slate-300">
+            <Box className="py-[3px]  text-[12px] md:text-[14px] px-2 outline-[1px] border-zinc-600 rounded-sm dark:bg-secondary-100 bg-slate-300">
               <Paragraph className="text-center dark:text-white text-black font-semibold">
                 1
               </Paragraph>
             </Box>
-            <span className="font-bold  text-[12px] md:text-[12px] font-segoe dark:text-white text-black">
+            <span className="font-bold  text-[12px] md:text-[14px] font-segoe dark:text-white text-black">
               :
             </span>
-            <Box className="py-[3px]  text-[12px] md:text-[12px] px-2 outline-[1px] border-zinc-600 rounded-sm dark:bg-secondary-100 bg-slate-300">
+            <Box className="py-[3px]  text-[12px] md:text-[14px] px-2 outline-[1px] border-zinc-600 rounded-sm dark:bg-secondary-100 bg-slate-300">
               <Paragraph className="text-center dark:text-white text-black font-semibold">
                 4
               </Paragraph>
             </Box>
-            <Box className="py-[3px]  text-[12px] md:text-[12px] px-2 outline-[1px] border-zinc-600 rounded-sm dark:bg-secondary-100 bg-slate-300">
+            <Box className="py-[3px]  text-[12px] md:text-[14px] px-2 outline-[1px] border-zinc-600 rounded-sm dark:bg-secondary-100 bg-slate-300">
               <Paragraph className="text-center dark:text-white text-black font-semibold">
                 2
               </Paragraph>
@@ -69,7 +69,7 @@ const Navbar = () => {
             </Paragraph>
           </Flex>
         </Flex>
-        <Paragraph className="text-xs lg:mt-[-10px] mt-1 sm:mt-0 dark:text-white text-black">
+        <Paragraph className="text-xs sm:mt-[-10px] mt-1  dark:text-white text-black">
           Meeting duration
         </Paragraph>
       </Box>

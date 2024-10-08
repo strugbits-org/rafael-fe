@@ -27,11 +27,11 @@ const Reminder = () => {
 
       {/* =================REMINDER CARD================= */}
 
-      <Flex className="mt-10 " wrap gap={20}>
+      <div className="mt-10 grid grid-cols-1  lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-5 mx-auto">
         {remindersData.map((reminder, index) => (
           <ReminderCard key={index} {...reminder} />
         ))}
-      </Flex>
+      </div>
     </Container>
   );
 };

@@ -65,13 +65,17 @@ const ParticipantsTableView = ({
               <tr key={row.id}>
                 {/* Display name */}
                 <td className="px-6 py-5 whitespace-nowrap">
-                  <Flex align="center" wrap gap={8}>
+                  <Flex
+                    align="center"
+                    className="flex-wrap xl:flex-nowrap"
+                    gap={8}
+                  >
                     {/* AVATAR with Microsoft logo */}
                     <Flex className="relative">
                       <img
                         src={row.profilePic}
                         alt={row.name}
-                        className="w-14 h-14 rounded-full"
+                        className="2xl:w-14 2xl:h-14 w-10 h-10 rounded-full"
                       />
                       <img
                         src={microsoftBadge}
@@ -80,15 +84,15 @@ const ParticipantsTableView = ({
                       />
                     </Flex>
                     {/* NAME AND BADGEs */}
-                    <Flex vertical gap={2}>
-                      <Flex gap={4} align="center">
+                    <Flex vertical gap={4}>
+                      <Flex gap={4} wrap align="center">
                         {row.name}
                         {row.badge?.length && (
                           <Flex className="flex space-x-1 pt-1">
                             {row.badge.map((badge, index) => (
                               <Flex
                                 key={index}
-                                className="w-5 h-5 bg-gray-50 rounded-full overflow-hidden"
+                                className="w-4 h-4 bg-gray-50 rounded-full overflow-hidden"
                               >
                                 <img
                                   className="w-full h-full object-cover"

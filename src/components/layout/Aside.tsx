@@ -3,7 +3,6 @@ import { Flex } from "antd";
 import { Link, useLocation } from "react-router-dom";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { GoHome } from "react-icons/go";
-import { MdOutlineCelebration } from "react-icons/md";
 
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useState } from "react";
@@ -11,6 +10,7 @@ import { Box } from "../ui/box";
 import { sidebarList } from "../../data";
 import DrawerSection from "../ui/DrawerSection";
 import NotificationIcon from "../../assets/icons/notification";
+import CelebrationIcon from "../../assets/icons/celebration";
 
 const Aside: React.FC = () => {
   const location = useLocation();
@@ -40,12 +40,7 @@ const Aside: React.FC = () => {
       case "reminders":
         return <NotificationIcon color={isActive ? "#2f88ff" : "gray"} />;
       case "updates":
-        return (
-          <MdOutlineCelebration
-            size={24}
-            fill={isActive ? "#2f88ff" : "gray"}
-          />
-        );
+        return <CelebrationIcon color={isActive ? "#2f88ff" : "gray"} />;
 
       default:
         return null;

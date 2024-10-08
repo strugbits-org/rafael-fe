@@ -20,7 +20,7 @@ const ParticipantOverview = () => {
           <Paragraph className="dark:text-white text-black text-[16px] md:text-[20px] xl:text-[24px] font-[400]">
             Participants overview
           </Paragraph>
-          <Paragraph className="text-black dark:text-[#81858f] text-[13px] md:text-[14px] xl:text-[15px] font-[400]">
+          <Paragraph className="text-black dark:text-[#828690] text-[13px] md:text-[14px] xl:text-[15px] font-[400]">
             This chart visualizes the geographical distribution of participants.
           </Paragraph>
         </Flex>

@@ -2,12 +2,13 @@ import { Drawer, Flex, Switch } from "antd";
 import { Link, useLocation } from "react-router-dom";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { GoHome } from "react-icons/go";
-import { MdOutlineNotificationsActive } from "react-icons/md";
-import { PiConfettiLight } from "react-icons/pi";
+
 import { RxHamburgerMenu } from "react-icons/rx";
 import { sidebarList } from "../../data";
 import { useSnapshot } from "valtio";
 import state from "../../store/store";
+import NotificationIcon from "../../assets/icons/notification";
+import CelebrationIcon from "../../assets/icons/celebration";
 
 interface DrawerProps {
   onClose: () => void;
@@ -32,14 +33,9 @@ const DrawerSection: React.FC<DrawerProps> = ({ onClose, open }) => {
           />
         );
       case "reminders":
-        return (
-          <MdOutlineNotificationsActive
-            size={24}
-            fill={isActive ? "#fff" : "gray"}
-          />
-        );
+        return <NotificationIcon color={isActive ? "#fff" : "gray"} />;
       case "updates":
-        return <PiConfettiLight size={24} fill={isActive ? "#fff" : "gray"} />;
+        return <CelebrationIcon color={isActive ? "#fff" : "gray"} />;
 
       default:
         return null;
@@ -92,8 +88,8 @@ const DrawerSection: React.FC<DrawerProps> = ({ onClose, open }) => {
               to={value.route}
               className={`  rounded-md flex gap-3 items-center p-2 py-1.5   text-black font-segoe  justify-start  ${
                 isActive
-                  ? "bg-primary-100  font-bold text-black"
-                  : "dark:text-[#8a8a8a]"
+                  ? "bg-primary-100  font-bold text-white"
+                  : "dark:text-[#8a8a8a] font-[200]"
               }`}
             >
               {IconComponent}

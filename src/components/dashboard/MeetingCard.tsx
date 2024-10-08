@@ -73,7 +73,7 @@ const MeetingCard = () => {
               Internal meeting
             </p>
             <Divider type="vertical" className="bg-[#fff] h-4" />
-            <Paragraph className="text-white text-[13px] md:text-[14px] xl:text-[15px] font-[400]">
+            <Paragraph className="text-white text-[13px] md:text-[14px] lg:text-[15px] font-[400]">
               {meetingDeatils.duration} minutes{" "}
             </Paragraph>
           </Flex>
@@ -83,19 +83,19 @@ const MeetingCard = () => {
       <Flex vertical gap={20} justify="space-between" className="pt-2">
         {/* DATE  */}
         <Flex vertical gap={1}>
-          <Paragraph className="text-white text-[13px] md:text-[14px] xl:text-[15px] font-[400]">
+          <Paragraph className="text-white text-[13px] md:text-[14px] lg:text-[15px] font-[400]">
             Date
           </Paragraph>
-          <Paragraph className="text-white text-[14px] md:text-[16px} xl:text-[18px] font-[400]">
+          <Paragraph className="text-white text-[14px] md:text-[16px} lg:text-[18px] font-[400]">
             Thursday, 15 August
           </Paragraph>
         </Flex>
         {/* TIME */}
         <Flex vertical gap={1}>
-          <Paragraph className="text-white text-[13px] md:text-[14px] xl:text-[15px] font-[400]">
+          <Paragraph className="text-white text-[13px] md:text-[14px] lg:text-[15px] font-[400]">
             Meeting Time
           </Paragraph>
-          <Paragraph className="text-white text-[14px] md:text-[16px} xl:text-[18px] font-[400]">
+          <Paragraph className="text-white text-[14px] md:text-[16px} lg:text-[18px] font-[400]">
             {meetingDeatils.startTime} - {meetingDeatils.endTime}
           </Paragraph>
         </Flex>

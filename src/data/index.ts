@@ -34,7 +34,7 @@ export const sidebarList: SidebarItem[] = [
 export const meetingDeatils: meetingDeatilsType = {
   startTime: "10:10 am",
   endTime: "10:55 am",
-  meetingTitle: "Weekly Sync Meeting",
+  meetingTitle: "Weekly sync meeting",
   speaker: {
     name: "Michael Jennings",
     avatarUrl:
@@ -43,7 +43,7 @@ export const meetingDeatils: meetingDeatilsType = {
   },
 
   topic: "Building Editors in the Browser",
-  duration: 10,
+  duration: 45,
   badge: [
     "https://i.pinimg.com/originals/e6/69/e5/e669e5304f0925a9072741069c9cdf7d.png",
   ],
