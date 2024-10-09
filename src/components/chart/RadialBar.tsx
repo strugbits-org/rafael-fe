@@ -143,11 +143,11 @@ const RadialBar = ({ viewMode }: { viewMode: viewMode }) => {
               </Paragraph>
             </Flex>
 
-            <Paragraph className="text-black dark:text-[#828690] text-[13px] md:text-[14px] xl:text-[15px] font-[200]">
+            <p className="text-black font-segoe dark:text-[#828690] text-[13px] md:text-[14px] xl:text-[15px] font-[200]">
               {chartData.series[index] < 10
                 ? `0${chartData.series[index]}`
                 : chartData.series[index]}
-            </Paragraph>
+            </p>
           </Flex>
         ))}
       </Flex>

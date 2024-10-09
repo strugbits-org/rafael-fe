@@ -103,7 +103,7 @@ const Participants = ({
               isActive={viewMode === "table"}
               onClick={() => setViewMode("table")}
             >
-              <BsListTask />
+              <BsListTask size={18} />
               Table
             </ViewModeButton>
             <ViewModeButton

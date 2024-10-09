@@ -4,6 +4,11 @@ import Paragraph from "../common/Paragraph";
 import CustomSelect from "../ui/CustomSelect";
 import { useState } from "react";
 
+const data = [
+  { value: "continents", label: "Continents" },
+  { value: "countries", label: "Countries" },
+];
+
 type typeViewMode = "countries" | "continents";
 const ParticipantOverview = () => {
   const [viewMode, setViewMode] = useState<typeViewMode>("continents");
@@ -20,12 +25,13 @@ const ParticipantOverview = () => {
           <Paragraph className="dark:text-white text-black text-[16px] md:text-[20px] xl:text-[24px] font-[400]">
             Participants overview
           </Paragraph>
-          <Paragraph className="text-black dark:text-[#828690] text-[13px] md:text-[14px] xl:text-[15px] font-[400]">
+          <p className="text-black font-segoe dark:text-[#828690] text-[13px] md:text-[14px] xl:text-[15px] font-[400]">
             This chart visualizes the geographical distribution of participants.
-          </Paragraph>
+          </p>
         </Flex>
         <Flex>
           <CustomSelect
+            options={data}
             onChange={(e: string) => setViewMode(e as typeViewMode)}
           />
         </Flex>
