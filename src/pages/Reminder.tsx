@@ -14,13 +14,13 @@ const Reminder = () => {
         </h1>
         <Paragraph className=" dark:text-white font-segoe text-black text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] font-[400]">
           For detailed information about our policies and to access our
-          comprehensive training materials,{" "}
+          comprehensive training materials, please{" "}
           <a
             href="https://www.google.co.uk/"
             target="_blank"
             className="text-[#2A85FF] font-segoe underline"
           >
-            please click here.{" "}
+            click here.{" "}
           </a>
         </Paragraph>
       </Flex>

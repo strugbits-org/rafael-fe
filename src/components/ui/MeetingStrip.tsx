@@ -2,8 +2,7 @@ import { Divider, Flex } from "antd";
 import { Box } from "./box";
 
 import microsoftBadge from "../../assets/images/microsoft.png";
-// import { PiInstagramLogo } from "react-icons/pi";
-// import { SiFacebook, SiLinkedin } from "react-icons/si";
+
 import Paragraph from "../common/Paragraph";
 import insta from "../../assets/images/insta.png";
 import fb from "../../assets/images/fbicon.png";

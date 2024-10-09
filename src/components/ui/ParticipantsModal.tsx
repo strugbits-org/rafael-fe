@@ -21,6 +21,21 @@ const modalVariants = {
   exit: { opacity: 0, scale: 0.8 },
 };
 
+const socialLinks = [
+  {
+    icon: <InstaIcon color={state.darkMode ? "#DBDBDB" : "#000"} />,
+    link: "https://www.instagram.com/",
+  },
+  {
+    icon: <FacebookIcon color={state.darkMode ? "#DBDBDB" : "#000"} />,
+    link: "https://www.facebook.com/",
+  },
+  {
+    icon: <LinkedinIcon color={state.darkMode ? "#DBDBDB" : "#000"} />,
+    link: "https://www.linkedin.com/",
+  },
+];
+
 const ParticipantDetailsModal = ({
   // CUSTOM MODAL USED ON PARTICIPANTS SECTION TO DISPLAY DETAILS
   data,
@@ -171,9 +186,16 @@ const ParticipantDetailsModal = ({
                 <Flex className="justify-between items-center">
                   <span>Social Links</span>
                   <div className="flex space-x-2 ">
-                    <InstaIcon color={state.darkMode ? "#DBDBDB" : "#000"} />
-                    <FacebookIcon color={state.darkMode ? "#DBDBDB" : "#000"} />
-                    <LinkedinIcon color={state.darkMode ? "#DBDBDB" : "#000"} />
+                    {socialLinks.map((link, index) => (
+                      <a
+                        key={index}
+                        href={link.link}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {link.icon}
+                      </a>
+                    ))}
                   </div>
                 </Flex>
               </div>
