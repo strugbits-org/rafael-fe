@@ -8,7 +8,7 @@ import ParticipantsModal from "../ui/ParticipantsModal";
 
 const header = [
   //TABLE HEADINGs
-  "Display name",
+  "Display Name",
   "Job Title",
   "Location",
   "Local Time",

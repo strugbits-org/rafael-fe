@@ -10,6 +10,21 @@ import fb from "../../assets/images/fbicon.png";
 import linkedin from "../../assets/images/ld.png";
 import { meetingDeatils } from "../../data";
 
+const socialLinks = [
+  //SOCIAL LINKS
+  {
+    icon: insta,
+    link: "https://www.instagram.com/",
+  },
+  {
+    icon: fb,
+    link: "https://www.facebook.com/",
+  },
+  {
+    icon: linkedin,
+    link: "https://www.linkedin.com/",
+  },
+];
 const MeetingStrip = () => {
   return (
     <Flex
@@ -106,9 +121,15 @@ const MeetingStrip = () => {
 
         {/* SOCIAL LINKS */}
         <Flex gap={8}>
-          <img src={insta} alt="insta" width={24} />
-          <img src={fb} alt="fb" width={24} />
-          <img src={linkedin} alt="linkedin" width={24} />
+          {socialLinks.map((link, index) => (
+            <a href={link.link} target="_blank" rel="noreferrer" key={index}>
+              <img
+                src={link.icon}
+                alt="social-ICON"
+                className="xl:w-[24px] sm:w-[20px] w-[18px]"
+              />
+            </a>
+          ))}
         </Flex>
       </Flex>
     </Flex>

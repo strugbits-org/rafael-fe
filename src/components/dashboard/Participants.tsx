@@ -154,9 +154,11 @@ const Participants = ({
         )
       ) : (
         // no data found
-        <Paragraph className=" dark:text-white text-black text-[14px] md:text-[15px] lg:text-[16px] xl:text-[18px] font-[400]">
-          No data found
-        </Paragraph>
+        <Flex className="min-h-[200px]">
+          <Paragraph className=" dark:text-white text-black text-[14px] md:text-[15px] lg:text-[16px] xl:text-[18px] font-[400]">
+            No data found
+          </Paragraph>
+        </Flex>
       )}
     </Flex>
   );

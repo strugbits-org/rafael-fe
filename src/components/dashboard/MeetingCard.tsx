@@ -10,6 +10,22 @@ import { meetingDeatils } from "../../data";
 import { Box } from "../ui/box";
 import { Divider, Flex } from "antd";
 
+const socialLinks = [
+  //SOCIAL LINKS
+  {
+    icon: insta,
+    link: "https://www.instagram.com/",
+  },
+  {
+    icon: fb,
+    link: "https://www.facebook.com/",
+  },
+  {
+    icon: linkedin,
+    link: "https://www.linkedin.com/",
+  },
+];
+
 const MeetingCard = () => {
   return (
     <Flex
@@ -101,20 +117,15 @@ const MeetingCard = () => {
         </Flex>
         {/* SOCIAL ICONS */}
         <Flex gap={8}>
-          {/* <PiInstagramLogo className="text-[24px] dark:text-white text-black " />
-<SiFacebook className="text-[24px] dark:text-white text-black " />
-<SiLinkedin className="text-[24px] dark:text-white text-black " /> */}
-          <img
-            src={insta}
-            alt="insta"
-            className="xl:w-[24px] sm:w-[20px] w-[18px]"
-          />
-          <img src={fb} alt="fb" className="xl:w-[24px] sm:w-[20px] w-[18px]" />
-          <img
-            src={linkedin}
-            alt="linkedin"
-            className="xl:w-[24px] sm:w-[20px] w-[18px]"
-          />
+          {socialLinks.map((link, index) => (
+            <a href={link.link} key={index} target="_blank" rel="noreferrer">
+              <img
+                src={link.icon}
+                alt="insta"
+                className="xl:w-[24px] sm:w-[20px] w-[18px]"
+              />
+            </a>
+          ))}
         </Flex>
       </Flex>
     </Flex>

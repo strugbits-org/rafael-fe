@@ -21,7 +21,7 @@ const Card = ({ data }: { data: participantsDataType }) => {
         />
         <div>
           {/* USER NAME AND BADGES */}
-          <Flex gap={"5 0"} wrap>
+          <Flex className="gap-1" wrap>
             <h2 className="text-[16px] font-bold dark:text-white text-black">
               {data.name}
             </h2>

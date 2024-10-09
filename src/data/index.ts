@@ -46,5 +46,6 @@ export const meetingDeatils: meetingDeatilsType = {
   duration: 45,
   badge: [
     "https://i.pinimg.com/originals/e6/69/e5/e669e5304f0925a9072741069c9cdf7d.png",
+    "https://i.pinimg.com/originals/e6/69/e5/e669e5304f0925a9072741069c9cdf7d.png",
   ],
 };
