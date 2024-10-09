@@ -11,6 +11,7 @@ import state from "../../store/store";
 import FacebookIcon from "../../assets/icons/facebook";
 import LinkedinIcon from "../../assets/icons/linkedin";
 import { IoMdClose } from "react-icons/io";
+import { useSnapshot } from "valtio";
 
 Modal.setAppElement("#root");
 
@@ -20,21 +21,6 @@ const modalVariants = {
   visible: { opacity: 1, scale: 1 },
   exit: { opacity: 0, scale: 0.8 },
 };
-
-const socialLinks = [
-  {
-    icon: <InstaIcon color={state.darkMode ? "#DBDBDB" : "#000"} />,
-    link: "https://www.instagram.com/",
-  },
-  {
-    icon: <FacebookIcon color={state.darkMode ? "#DBDBDB" : "#000"} />,
-    link: "https://www.facebook.com/",
-  },
-  {
-    icon: <LinkedinIcon color={state.darkMode ? "#DBDBDB" : "#000"} />,
-    link: "https://www.linkedin.com/",
-  },
-];
 
 const ParticipantDetailsModal = ({
   // CUSTOM MODAL USED ON PARTICIPANTS SECTION TO DISPLAY DETAILS
@@ -50,6 +36,26 @@ const ParticipantDetailsModal = ({
   const closeModal = () => setModalIsOpen(false);
 
   const fullWidthButton = fullWidthbtn ? "w-full" : "w-auto"; // FOR MAKING BUTTON FULL WIDTH
+  const dartModeState = useSnapshot(state);
+
+  const socialLinks = [
+    {
+      icon: <InstaIcon color={dartModeState.darkMode ? "#DBDBDB" : "#000"} />,
+      link: "https://www.instagram.com/",
+    },
+    {
+      icon: (
+        <FacebookIcon color={dartModeState.darkMode ? "#DBDBDB" : "#000"} />
+      ),
+      link: "https://www.facebook.com/",
+    },
+    {
+      icon: (
+        <LinkedinIcon color={dartModeState.darkMode ? "#DBDBDB" : "#000"} />
+      ),
+      link: "https://www.linkedin.com/",
+    },
+  ];
 
   return (
     <>
