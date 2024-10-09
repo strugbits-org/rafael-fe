@@ -38,6 +38,7 @@ const ParticipantOverview = () => {
       </Flex>
 
       {/* RADIAL CHART  */}
+
       <RadialBar viewMode={viewMode} />
     </Flex>
   );

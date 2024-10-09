@@ -153,7 +153,7 @@ const RadialBar = ({ viewMode }: { viewMode: viewMode }) => {
       </Flex>
 
       {/* Radial Bar Chart */}
-      <Flex className="2xl:-mr-10">
+      <Flex className="2xl:-mr-10 xl:flex-grow xl:justify-center 2xl:flex-grow-0 ">
         <ReactApexChart
           options={options}
           series={options.series}
