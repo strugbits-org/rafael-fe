@@ -1,5 +1,5 @@
 // Navbar.tsx
-import { Flex, Switch } from "antd";
+import { Flex, message, Switch } from "antd";
 
 import { FaShareSquare } from "react-icons/fa";
 import state from "../../store/store";
@@ -9,6 +9,16 @@ import Paragraph from "../common/Paragraph";
 const Navbar = () => {
   const onChange = (checked: boolean) => {
     state.darkMode = checked;
+  };
+
+  const copyUrlToClipboard = async () => {
+    try {
+      const urlToCopy = window.location.href;
+      await navigator.clipboard.writeText(urlToCopy);
+      message.success("Copied to clipboard.");
+    } catch (err) {
+      alert(err);
+    }
   };
 
   return (
@@ -49,13 +59,15 @@ const Navbar = () => {
             </Box>
           </Flex>
           <button
-            className="rounded-md font-segoe dark:text-white text-black dark:bg-[#3A3A3A] bg-slate-300 border-[1px] dark:border-zinc-600 hover:text-black border-red-50 hover:bg-primary-100 text-[12px] md:text-[14px] flex gap-2 items-center px-3 py-1"
+            onClick={copyUrlToClipboard}
+            className="rounded-md font-segoe dark:text-white text-black dark:bg-[#3A3A3A] bg-slate-300 border-[1px] dark:border-zinc-600 hover:text-black border-red-50 hover:bg-primary-100 dark:hover:bg-primary-100 text-[12px] md:text-[14px] flex gap-2 items-center px-3 py-1"
 
             // color="#fff"
           >
             <FaShareSquare />
             <span className="sm:block hidden">Share invite</span>
           </button>
+
           {/* Toggle Switch for dark mode */}
           <Flex
             className="md:flex hidden gap-y-1"
