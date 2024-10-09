@@ -11,11 +11,11 @@ const AnnouncementCard = ({
 }: annoucements) => {
   return (
     <Flex
-      className="p-4 font-segoe w-full dark:bg-[#3B3B3B] bg-gray-300 rounded-[12px]"
+      className="p-4 w-full dark:bg-[#3B3B3B] bg-gray-300 rounded-[12px]"
       vertical
       gap={12}
     >
-      <h5 className=" dark:text-white text-black text-[14px] md:text-[15px] xl:text-[18px] font-[700]">
+      <h5 className=" dark:text-white font-segoeBold font-[100] text-black text-[14px] md:text-[15px] xl:text-[18px] ">
         {title}
       </h5>
 

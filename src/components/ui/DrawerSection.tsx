@@ -1,4 +1,4 @@
-import { Drawer, Flex, Switch } from "antd";
+import { Drawer, Flex } from "antd";
 import { Link, useLocation } from "react-router-dom";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { GoHome } from "react-icons/go";
@@ -9,6 +9,7 @@ import { useSnapshot } from "valtio";
 import state from "../../store/store";
 import NotificationIcon from "../../assets/icons/notification";
 import CelebrationIcon from "../../assets/icons/celebration";
+import ThemeToggleSwitch from "./ThemeToggleSwitch";
 
 interface DrawerProps {
   onClose: () => void;
@@ -42,11 +43,6 @@ const DrawerSection: React.FC<DrawerProps> = ({ onClose, open }) => {
     }
   };
   const snap = useSnapshot(state);
-
-  const onChange = (checked: boolean) => {
-    //GLOGAL DARK MODE STATE
-    state.darkMode = checked;
-  };
 
   return (
     <Drawer
@@ -98,22 +94,10 @@ const DrawerSection: React.FC<DrawerProps> = ({ onClose, open }) => {
           );
         })}
       </Flex>
-      <Flex
-        vertical
-        gap={10}
-        align="start"
-        className="mt-4 pl-2 md:hidden flex"
-      >
-        <Switch
-          defaultChecked={state.darkMode}
-          size="small"
-          onChange={onChange}
-        />
 
-        <span className="dark:text-white text-black font-segoe">
-          {state.darkMode ? "Dark Mode" : "Light Mode"}
-        </span>
-      </Flex>
+      <div className=" mt-4 pl-2 md:hidden flex">
+        <ThemeToggleSwitch />
+      </div>
     </Drawer>
   );
 };

@@ -1,16 +1,13 @@
 // Navbar.tsx
-import { Flex, message, Switch } from "antd";
+import { Flex, message } from "antd";
 
 import { FaShareSquare } from "react-icons/fa";
-import state from "../../store/store";
+
 import { Box } from "../ui/box";
 import Paragraph from "../common/Paragraph";
+import ThemeToggleSwitch from "../ui/ThemeToggleSwitch";
 
 const Navbar = () => {
-  const onChange = (checked: boolean) => {
-    state.darkMode = checked;
-  };
-
   const copyUrlToClipboard = async () => {
     try {
       const urlToCopy = window.location.href;
@@ -28,7 +25,7 @@ const Navbar = () => {
       className="xl:pt-3 sm:pt-[18px] pt-[20px] pb-2"
       gap={6}
     >
-      <h1 className="font-bold dark:text-white font-segoe text-black xl:text-[28px] md:text-[22px] text-[18px]">
+      <h1 className="font-bold dark:text-white font-segoeBold text-black xl:text-[28px] md:text-[22px] text-[18px]">
         Meeting Title
       </h1>
       <Box>
@@ -69,17 +66,9 @@ const Navbar = () => {
           </button>
 
           {/* Toggle Switch for dark mode */}
-          <Flex
-            className="md:flex hidden gap-y-1"
-            justify="center"
-            align="center"
-            vertical
-          >
-            <Switch defaultChecked={state.darkMode} onChange={onChange} />
-            <Paragraph className="text-[10px] dark:text-white text-black">
-              {state.darkMode ? "Dark Mode" : "Light Mode"}
-            </Paragraph>
-          </Flex>
+          <div className="md:flex hidden">
+            <ThemeToggleSwitch />
+          </div>
         </Flex>
         <Paragraph className="text-xs sm:mt-[-10px] mt-1  dark:text-white text-black">
           Meeting duration

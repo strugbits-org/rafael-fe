@@ -41,7 +41,7 @@ const MeetingAgenda = () => {
             <Flex className="xl:p-7 p-4 md:p-6 " vertical gap={32}>
               <MeetingStrip />
               <Flex className="dark:bg-[#1f1f1f]  bg-slate-200 rounded-[12px] flex-col gap-7 xl:p-7 p-4 md:p-6 ">
-                <h1 className=" dark:text-white font-segoe text-black text-[16px] md:text-[18px] lg:text-[20px] xl:text-[24px] font-[600]">
+                <h1 className=" dark:text-white font-segoeBold text-black text-[16px] md:text-[18px] lg:text-[20px] xl:text-[24px] font-[600]">
                   Meeting Agenda
                 </h1>
                 <ConferenceScheduleTable onClick={detailClickHandler} />

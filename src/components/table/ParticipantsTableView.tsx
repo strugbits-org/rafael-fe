@@ -48,7 +48,7 @@ const ParticipantsTableView = ({
                       onClick={() => setIsCelsius(!isCelsius)}
                     >
                       Weather
-                      <span className="dark:text-white font-segoe text-black  font-semibold bg-[#2A85FF] rounded-[3px] w-8 h-8 flex items-center justify-center">
+                      <span className="dark:text-white font-segoe text-black  bg-[#2A85FF] rounded-[3px] w-8 h-8 flex items-center justify-center">
                         °{isCelsius ? "C" : "F"}
                       </span>
                     </button>

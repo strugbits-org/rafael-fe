@@ -77,15 +77,19 @@ const RadialBar = ({ viewMode }: { viewMode: viewMode }) => {
         dataLabels: {
           name: {
             fontSize: "22px",
+            fontFamily: "segoe ui",
           },
           value: {
             fontSize: "16px",
             color: snap.darkMode ? "white" : "black",
+            fontFamily: "segoe ui",
           },
           total: {
             show: true,
             label: "Participants",
+            fontFamily: "segoe ui",
             color: snap.darkMode ? "#828690" : "black",
+
             formatter: function () {
               return totalParticipants.toString();
             },

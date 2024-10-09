@@ -11,6 +11,7 @@ export default {
       },
       fontFamily: {
         segoe: ['"Segoe UI"', "sans-serif"],
+        segoeBold: ['"Segoe UI BOLD"', "sans-serif"],
       },
       backgroundImage: {
         bgImageCelebration: "url('/src/assets/images/celebrationBGImage.png')",

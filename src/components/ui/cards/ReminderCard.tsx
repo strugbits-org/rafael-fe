@@ -7,8 +7,8 @@ const ReminderCard = ({ title, description, image }: reminder) => {
   // REMINDER CARD -> RENDERS REMINDERS DATA ON REMINDERS PAGE
   return (
     <Box className="dark:bg-[#1f1f1f] bg-slate-200 p-4  shadow-md rounded-[6px]">
-      <Flex vertical gap={12} className="font-segoe">
-        <h3 className="dark:text-white text-black text-[14px] md:text-[15px] xl:text-[16px] font-[600]">
+      <Flex vertical gap={12}>
+        <h3 className="dark:text-white font-segoeBold text-black text-[14px] md:text-[15px] xl:text-[16px] font-[600]">
           {title}
         </h3>
 
@@ -20,7 +20,7 @@ const ReminderCard = ({ title, description, image }: reminder) => {
           />
         </Box>
 
-        <Paragraph className="dark:text-white text-black text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] font-[400]">
+        <Paragraph className="dark:text-white font-segoe text-black text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] font-[400]">
           {description}
         </Paragraph>
       </Flex>

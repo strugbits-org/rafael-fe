@@ -8,11 +8,11 @@ import Paragraph from "../components/common/Paragraph";
 const Reminder = () => {
   return (
     <Container>
-      <Flex vertical gap={12} className="font-segoe">
-        <h1 className=" dark:text-white text-black text-[16px] md:text-[18px] lg:text-[20px] xl:text-[24px] font-[600]">
+      <Flex vertical gap={12}>
+        <h1 className=" dark:text-white font-segoeBold text-black text-[16px] md:text-[18px] lg:text-[20px] xl:text-[24px] font-[600]">
           Reminders
         </h1>
-        <Paragraph className=" dark:text-white text-black text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] font-[400]">
+        <Paragraph className=" dark:text-white font-segoe text-black text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] font-[400]">
           For detailed information about our policies and to access our
           comprehensive training materials,{" "}
           <a

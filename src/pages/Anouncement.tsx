@@ -20,7 +20,7 @@ const InnerContainer: React.FC<InnerContainer> = (
     gap={16}
   >
     <Box>
-      <h1 className=" dark:text-white font-segoe text-black text-[16px] md:text-[18px] lg:text-[20px] xl:text-[24px] font-[600]">
+      <h1 className=" dark:text-white font-segoeBold text-black text-[16px] md:text-[18px] lg:text-[20px] xl:text-[24px] font-[500]">
         {title}
       </h1>
     </Box>

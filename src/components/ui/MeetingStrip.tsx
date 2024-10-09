@@ -40,7 +40,7 @@ const MeetingStrip = () => {
       >
         <Flex align="center" gap={25}>
           <Flex align="center" vertical>
-            <h2 className="text-white font-segoe text-[16px] md:text-[24px] lg:text-[28px] xl:text-[32px] font-[600]">
+            <h2 className="text-white font-segoeBold text-[16px] md:text-[24px] lg:text-[28px] xl:text-[32px] font-[600]">
               AUG
             </h2>
             <Paragraph className="text-white text-[14px] md:text-[20px] lg:text-[24px] xl:text-[28px] font-[400]">

@@ -64,7 +64,7 @@ const ParticipantDetailsModal = ({
             >
               {/* HEADER */}
               <div className="flex justify-between items-center mb-6 font-segoe">
-                <h2 className="text-2xl font-bold">Details</h2>
+                <h2 className="text-2xl font-segoeBold ">Details</h2>
                 <button
                   onClick={closeModal}
                   className="text-gray-400 hover:text-white"
@@ -80,7 +80,7 @@ const ParticipantDetailsModal = ({
                   alt={data.name}
                   className="w-24 h-24 rounded-full mb-4"
                 />
-                <h3 className="text-[16px] font-semibold">{data.name}</h3>
+                <h3 className="text-[16px] font-segoeBold">{data.name}</h3>
                 <p className="text-[12px] font-segoe text-gray-500 dark:text-[#DBDBDB]">
                   {data.jobTitle}
                 </p>

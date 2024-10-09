@@ -18,7 +18,7 @@ const ConferenceScheduleTable = ({ onClick }: Props) => {
                 <th
                   key={index}
                   // className={`${index === 0 ? "pl-5" : ""} py-6 text-left `}
-                  className="px-5 py-8 whitespace-nowrap text-left"
+                  className="px-5 py-8 whitespace-nowrap font-segoeBold text-left"
                 >
                   {item}
                 </th>
