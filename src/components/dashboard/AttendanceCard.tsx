@@ -2,6 +2,7 @@ import { Box } from "../ui/box";
 import { Flex } from "antd";
 import SemiGuage from "../chart/SemiGuage";
 import Paragraph from "../common/Paragraph";
+import { AttendanceCardData } from "../../data/DashboardData";
 
 const AttendanceCard = () => {
   return (
@@ -19,7 +20,7 @@ const AttendanceCard = () => {
           {/* invited */}
           <Flex vertical align="center">
             <Paragraph className="dark:text-white text-black  text-[12px] 2xl:text-[18px] font-semibold">
-              10
+              {AttendanceCardData.invited}
             </Paragraph>
             <Paragraph className="dark:text-white text-black text-xs">
               Invited
@@ -28,7 +29,7 @@ const AttendanceCard = () => {
           {/* accepted */}
           <Flex vertical align="center">
             <Paragraph className="dark:text-white text-black text-[12px] 2xl:text-[18px] font-semibold ">
-              6
+              {AttendanceCardData.accepted}
             </Paragraph>
             <Paragraph className="dark:text-white text-black text-xs">
               Accepted
@@ -40,7 +41,7 @@ const AttendanceCard = () => {
           {/* tentative */}
           <Flex vertical align="center">
             <Paragraph className="dark:text-white text-black text-[12px] 2xl:text-[18px] font-semibold ">
-              4
+              {AttendanceCardData.tentative}
             </Paragraph>
             <Paragraph className="dark:text-white text-black text-xs">
               Tentative
@@ -49,7 +50,7 @@ const AttendanceCard = () => {
           {/* decline */}
           <Flex vertical align="center">
             <Paragraph className="dark:text-white text-black text-[12px] 2xl:text-[18px] font-semibold ">
-              2
+              {AttendanceCardData.declined}
             </Paragraph>
             <Paragraph className="dark:text-white text-black text-xs">
               Declined

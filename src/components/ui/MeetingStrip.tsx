@@ -4,26 +4,9 @@ import { Box } from "./box";
 import microsoftBadge from "../../assets/images/microsoft.png";
 
 import Paragraph from "../common/Paragraph";
-import insta from "../../assets/images/insta.png";
-import fb from "../../assets/images/fbicon.png";
-import linkedin from "../../assets/images/ld.png";
-import { meetingDeatils } from "../../data";
 
-const socialLinks = [
-  //SOCIAL LINKS
-  {
-    icon: insta,
-    link: "https://www.instagram.com/",
-  },
-  {
-    icon: fb,
-    link: "https://www.facebook.com/",
-  },
-  {
-    icon: linkedin,
-    link: "https://www.linkedin.com/",
-  },
-];
+import { meetingDeatils } from "../../data/MeetingAgendaData";
+
 const MeetingStrip = () => {
   return (
     <Flex
@@ -39,11 +22,11 @@ const MeetingStrip = () => {
       >
         <Flex align="center" gap={25}>
           <Flex align="center" vertical>
-            <h2 className="text-white font-segoeBold text-[16px] md:text-[24px] lg:text-[28px] xl:text-[32px] font-[600]">
-              AUG
+            <h2 className="text-white font-segoeBold text-[16px] uppercase md:text-[24px] lg:text-[28px] xl:text-[32px] font-[600]">
+              {meetingDeatils.month}
             </h2>
             <Paragraph className="text-white text-[14px] md:text-[20px] lg:text-[24px] xl:text-[28px] font-[400]">
-              15
+              {meetingDeatils.date}
             </Paragraph>
           </Flex>
 
@@ -65,7 +48,7 @@ const MeetingStrip = () => {
           </Paragraph>
           {/* ===================MEETING TYPE======================= */}
           <p className=" text-[13px] xl:mt-5 md:text-[14px] xl:text-[15px] font-[400] bg-[#DCFFD7] rounded-[16px] py-1 px-3 font-segoe border-[#1EBD04] text-[#1EBD04]">
-            Internal meeting
+            {meetingDeatils.meetingType}
           </p>
         </Flex>
       </Flex>
@@ -120,7 +103,7 @@ const MeetingStrip = () => {
 
         {/* SOCIAL LINKS */}
         <Flex gap={8}>
-          {socialLinks.map((link, index) => (
+          {meetingDeatils.socialLinks.map((link, index) => (
             <a href={link.link} target="_blank" rel="noreferrer" key={index}>
               <img
                 src={link.icon}

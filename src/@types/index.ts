@@ -5,6 +5,38 @@ interface particapantsGeoDataType {
   continent: string;
 }
 
+type socialIconType = "facebook" | "instagram" | "linkedin";
+interface socialLinksType {
+  icon?: string;
+  link: string;
+  type: socialIconType;
+}
+
+interface meetingCardDetails {
+  startTime: string;
+  endTime: string;
+  meetingTitle: string;
+  speaker: {
+    name: string;
+    designation: string;
+    avatarUrl: string;
+  };
+  date: string;
+  day: string;
+  meetingType: string;
+  duration: number;
+  badge: string[];
+  socialLinks: socialLinksType[];
+}
+
+interface AttendanceCardDataType {
+  invited: number;
+  accepted: number;
+  tentative: number;
+  declined: number;
+  attendancePercentage: number;
+}
+
 interface Location {
   lat: number;
   lng: number;
@@ -53,6 +85,7 @@ interface participantsDataType {
     name: string;
     img: string;
   };
+  socialLinks: socialLinksType[];
 }
 
 type WeatherCondition = "sunny" | "cloudy" | "rainy" | "snowy" | "windy";
@@ -93,12 +126,24 @@ interface ScheduleItem {
   topic: string;
   duration: number;
   badge?: string[];
+  day?: string;
+  date?: string;
+  month?: string;
+  description?: string;
+  keyPoints?: string[];
+  designation?: string;
+  endTime?: string;
 }
 
 interface meetingDeatilsType extends ScheduleItem {
   meetingTitle: string;
   startTime: string;
   endTime: string;
+  date: string;
+  day: string;
+  meetingType: string;
+  socialLinks: socialLinksType[];
+  month: string;
 }
 
 export type {
@@ -115,4 +160,7 @@ export type {
   FilterCountry,
   WeatherCondition,
   participantsDataType,
+  meetingCardDetails,
+  AttendanceCardDataType,
+  socialIconType,
 };

@@ -14,8 +14,6 @@ const MeetingPersonDetails = ({
   setShowDetails,
   data,
 }: MeetingPersonDetailsProps) => {
-  console.log("data", data);
-
   return (
     <Container>
       {/* BACK BUTTON */}
@@ -58,9 +56,11 @@ const MeetingPersonDetails = ({
                   className="bg-[#2A85FF] max-w-[350px] dark:text-white text-black  rounded-md justify-between p-4 text-[14px] lg:text-[16px] uppercase  flex-col sm:flex-row  font-[500]"
                   align="center"
                 >
-                  <Paragraph>Thursday</Paragraph>
+                  <Paragraph>{data?.day}</Paragraph>
                   <Divider type="vertical" className="bg-white h-6" />
-                  <Paragraph>15 August</Paragraph>
+                  <Paragraph>
+                    {data?.date} {data?.month}
+                  </Paragraph>
                   <Divider type="vertical" className="bg-white h-6" />
 
                   <Paragraph>{data?.time}</Paragraph>
@@ -74,13 +74,7 @@ const MeetingPersonDetails = ({
                 >
                   <h5 className="font-[600] font-segoe">Description</h5>
                   {/* PASS DESCRIPTION DATA HERE */}
-                  <Paragraph>
-                    Employee wellness programs are becoming increasingly
-                    important as companies recognize the value of a healthy and
-                    engaged workforce. By investing in wellness initiatives,
-                    businesses can reduce absenteeism, improve productivity, and
-                    create a more positive work environment.
-                  </Paragraph>
+                  <Paragraph>{data?.description}</Paragraph>
 
                   <Flex vertical gap={4}>
                     <Paragraph>Key points:</Paragraph>
@@ -88,9 +82,9 @@ const MeetingPersonDetails = ({
                     {/* KEY POINTS ARRAY HERE */}
 
                     <ul className="list-disc list-inside font-segoe">
-                      <li>Physical wellness</li>
-                      <li>Physical wellness</li>
-                      <li>Physical wellness</li>
+                      {data?.keyPoints?.map((point, i) => (
+                        <li key={i}>{point}</li>
+                      ))}
                     </ul>
                   </Flex>
                 </Flex>
@@ -102,7 +96,7 @@ const MeetingPersonDetails = ({
                 >
                   <h6 className=" font-[600] font-segoe">Duration</h6>
                   <Paragraph>
-                    10:20 AM - 10:35 AM ({data?.duration} minutes)
+                    {data?.time} - {data?.endTime} ({data?.duration} minutes)
                   </Paragraph>
                 </Flex>
 
@@ -113,7 +107,7 @@ const MeetingPersonDetails = ({
                     {data?.speaker.name}
                   </h6>
                   <Paragraph className="   text-[14px] lg:text-[16px]     ">
-                    Director of employee wellness
+                    {data?.designation}
                   </Paragraph>
                   {data && data.badge?.length && (
                     <Box className="flex space-x-1">

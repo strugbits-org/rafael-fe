@@ -2,10 +2,11 @@ import { useState } from "react";
 import ReactApexChart from "react-apexcharts";
 import state from "../../store/store";
 import { useSnapshot } from "valtio";
+import { AttendanceCardData } from "../../data/DashboardData";
 
 const SemiGuage = () => {
   const snap = useSnapshot(state);
-  const [series] = useState([25]);
+  const [series] = useState([AttendanceCardData.attendancePercentage]);
   const labelColor = snap.darkMode ? "#fff" : "#000";
 
   const options = {

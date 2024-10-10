@@ -6,12 +6,11 @@ import WeatherIcon from "./WeatherIconRender";
 import { Flex } from "antd";
 import { AnimatePresence, motion } from "framer-motion";
 
-import InstaIcon from "../../assets/icons/insta";
 import state from "../../store/store";
-import FacebookIcon from "../../assets/icons/facebook";
-import LinkedinIcon from "../../assets/icons/linkedin";
+
 import { IoMdClose } from "react-icons/io";
 import { useSnapshot } from "valtio";
+import RenderSocialIcons from "./RenderSocialIcons";
 
 Modal.setAppElement("#root");
 
@@ -37,25 +36,6 @@ const ParticipantDetailsModal = ({
 
   const fullWidthButton = fullWidthbtn ? "w-full" : "w-auto"; // FOR MAKING BUTTON FULL WIDTH
   const dartModeState = useSnapshot(state);
-
-  const socialLinks = [
-    {
-      icon: <InstaIcon color={dartModeState.darkMode ? "#DBDBDB" : "#000"} />,
-      link: "https://www.instagram.com/",
-    },
-    {
-      icon: (
-        <FacebookIcon color={dartModeState.darkMode ? "#DBDBDB" : "#000"} />
-      ),
-      link: "https://www.facebook.com/",
-    },
-    {
-      icon: (
-        <LinkedinIcon color={dartModeState.darkMode ? "#DBDBDB" : "#000"} />
-      ),
-      link: "https://www.linkedin.com/",
-    },
-  ];
 
   return (
     <>
@@ -192,7 +172,7 @@ const ParticipantDetailsModal = ({
                 <Flex className="justify-between items-center">
                   <span>Social Links</span>
                   <div className="flex space-x-2 ">
-                    {socialLinks.map((link, index) => (
+                    {data.socialLinks.map((link, index) => (
                       <a
                         key={index}
                         href={link.link}
@@ -200,6 +180,10 @@ const ParticipantDetailsModal = ({
                         rel="noreferrer"
                       >
                         {link.icon}
+                        <RenderSocialIcons
+                          color={dartModeState.darkMode ? "#DBDBDB" : "#000"}
+                          type={link.type}
+                        />
                       </a>
                     ))}
                   </div>
